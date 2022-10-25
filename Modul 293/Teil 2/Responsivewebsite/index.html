@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Responsive Website</title>
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<header>
+    <div class="topnav" id="myTopnav">
+        <a href="/" class="active">Home</a>
+        <a href="https://gibb.ch/">Gibb</a>
+        <a href="https://www.wikipedia.org/">Wikipedia</a>
+        <a href="/imprint.html">Imprint</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <script>
+        function myFunction() {
+            let x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</header>
+<main>
+    <h1>I introduce you to my 3 favorite objects!</h1>
+    <div class="grid-container">
+        <div>
+            <article class="about">
+                <h2>About me!</h2>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore
+                    et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                    rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                    ipsum
+                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                    dolore
+                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                    Stet
+                    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </article>
+        </div>
+        <div class="contentContainer">
+            <article>
+                <h2>My Bed</h2>
+                <img src="images/bed.jpg" alt="Picture of a bed">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore
+                    et dolore magna aliquyam erat, sed diam voluptua.</p>
+            </article>
+            <article>
+                <h2>My Headphones</h2>
+                <img src="images/headphones.jpg" alt="Picture of a headset">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore
+                    et dolore magna aliquyam erat, sed diam voluptua.</p>
+            </article>
+        </div>
+    </div>
+
+</main>
+
+
+<footer>
+    <p>Author: Example<br>
+        <a href="mailto:example@gmx.ch">Contact Me!</a></p>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDa Portfolio</title>
+    <link rel="stylesheet" href="Style/navbar.css">
+    <link rel="stylesheet" href="Style/global.css">
+    <!-- Styletag damit der Footer dass macht was er auch immer unten am Screen bleibt falls nicht genügend Inhalt da ist-->
+    <style>
+        @media screen and (min-width: 625px) {
+            footer {
+                position: fixed;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Most parts of the Menu are from https://codepen.io/Javscript/pen/jOBbRpa -->
+<header>
+    <div class="topnav" id="myTopnav">
+        <a href="./index.html" id="home">MDa</a>
+        <a href="webhosting.html">Webhosting-Anbieter </a>
+        <a href="legal-aspects.html">Rechtliche Aspekte </a>
+        <a href="mock-up.html">Mock Up </a>
+        <a href="about.html">About</a>
+        <a href="javascript:void(0);" class="hamburger" id="icon" onclick="openMenu()">
+            ☰
+        </a>
+    </div>
+</header>
+<main>
+    <!-- Grid-Container wird genutzt um ein Raster zu gestalten um die Seite responsive zu gestalten. -->
+    <div class="grid-container">
+        <article>
+            <h2>Title</h2>
+            <p>Es gibt eine sogenannte Impressumspflicht welche eine dazu verpflichtet dass ein Impressum auf der
+                Website
+                vorhanden sein muss. Das Impressum dient dazu dass der Nutzer der Website erkennen kann mit wem er es zu
+                tun
+                hat oder wer hinter der Website steckt. Es gibt jedoch auch eine Sonderregelung was komplett private
+                Websites betrifft. Wer die Impressumsplicht verletzt, dem droht eine Geldstrafe oder bis zu 3 Jahren
+                Freiheitsstrafe. </p>
+        </article>
+        <article>
+            <h2>Title</h2>
+            <p>Es gibt eine sogenannte Impressumspflicht welche eine dazu verpflichtet dass ein Impressum auf der
+                Website
+                vorhanden sein muss. Das Impressum dient dazu dass der Nutzer der Website erkennen kann mit wem er es zu
+                tun
+                hat oder wer hinter der Website steckt. Es gibt jedoch auch eine Sonderregelung was komplett private
+                Websites betrifft. Wer die Impressumsplicht verletzt, dem droht eine Geldstrafe oder bis zu 3 Jahren
+                Freiheitsstrafe.</p>
+        </article>
+        <article>
+            <h2>Title</h2>
+            <p>Es gibt eine sogenannte Impressumspflicht welche eine dazu verpflichtet dass ein Impressum auf der
+                Website
+                vorhanden sein muss. Das Impressum dient dazu dass der Nutzer der Website erkennen kann mit wem er es zu
+                tun
+                hat oder wer hinter der Website steckt. Es gibt jedoch auch eine Sonderregelung was komplett private
+                Websites betrifft. Wer die Impressumsplicht verletzt, dem droht eine Geldstrafe oder bis zu 3 Jahren
+                Freiheitsstrafe.</p>
+        </article>
+
+    </div>
+
+</main>
+<!-- Falls das Display zu klein ist wird kein Inhalt mehr angezeigt -->
+<div class="displayTooSmall">
+    <h2>Sorry :(</h2>
+    <p>Your screen is too small to show some Content!</p>
+</div>
+<footer>
+    <p><a href="imprint.html">Impressum</a> | <a href="contact.html">Konatkt</a></p>
+</footer>
+<script>
+    //Funktion um dass Hamburger Menu zu öffnen/schliessen
+    function openMenu() {
+        let navBar = document.getElementById("myTopnav");
+        let icon = document.getElementById("icon");
+        if (navBar.className === "topnav") {
+            navBar.className += " responsive";
+            icon.innerHTML = "X";
+
+        } else {
+            navBar.className = "topnav";
+            icon.innerHTML = "☰";
+
+        }
+
+    }
+
+</script>
+</body>
+</html>

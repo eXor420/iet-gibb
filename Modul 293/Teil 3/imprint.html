@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum</title>
+    <link rel="stylesheet" href="Style/navbar.css">
+    <link rel="stylesheet" href="Style/global.css">
+    <!-- Styletag damit der Footer dass macht was er auch immer unten am Screen bleibt falls nicht genügend Inhalt da ist-->
+    <style>
+        footer {
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Some parts of the Menu are From https://codepen.io/Javscript/pen/jOBbRpa -->
+<header>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" id="home">MDa</a>
+        <a href="webhosting.html">Webhosting-Anbieter </a>
+        <a href="legal-aspects.html">Rechtliche Aspekte </a>
+        <a href="mock-up.html">Mock Up </a>
+        <a href="about.html">About</a>
+        <a href="javascript:void(0);" class="hamburger" id="icon" onclick="openMenu()">
+            ☰
+        </a>
+    </div>
+</header>
+<main>
+
+    <article>
+        <h1>Impressum</h1>
+        <h2>
+            Ersteller
+        </h2>
+        <h2>
+            Auftraggeber
+        </h2>
+        <p>Gibb Berufsfachschule Bern <br> Lorrainestrasse 1 <br>Postfach 248 <br> 3000 Bern 22 <br> Schweiz CH <br><br>
+            Telefon: 031 335 91 11 <br> Fax: 031 335 91 60</p>
+    </article>
+
+</main>
+<!-- Falls das Display zu klein ist wird kein Inhalt mehr angezeigt -->
+<div class="displayTooSmall">
+    <h2>Sorry :(</h2>
+    <p>Your screen is too small to show some Content!</p>
+</div>
+<footer>
+    <p><a href="./imprint.html">Impressum</a> | <a href="contact.html">Konatkt</a></p>
+</footer>
+<script>
+    //Funktion um dass Hamburger Menu zu öffnen/schliessen
+    function openMenu() {
+        let navBar = document.getElementById("myTopnav");
+        let icon = document.getElementById("icon");
+        if (navBar.className === "topnav") {
+            navBar.className += " responsive";
+            icon.innerHTML = "X";
+
+        } else {
+            navBar.className = "topnav";
+            icon.innerHTML = "☰";
+
+        }
+
+    }
+
+</script>
+</body>
+</html>

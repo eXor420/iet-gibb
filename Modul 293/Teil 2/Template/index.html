@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html data-lt-installed="true">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>W3.CSS Template</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/w3.css">
+    <link rel="stylesheet" href="./css/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body id="myPage">
+
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2"
+     id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+        <i class="fa fa-remove"></i>
+    </a>
+    <a href="./index.html#" class="w3-bar-item w3-button">Link 1</a>
+    <a href="./index.html#" class="w3-bar-item w3-button">Link 2</a>
+    <a href="./index.html#" class="w3-bar-item w3-button">Link 3</a>
+    <a href="./index.html#" class="w3-bar-item w3-button">Link 4</a>
+    <a href="./index.html#" class="w3-bar-item w3-button">Link 5</a>
+</nav>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
+           href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        <a href="./index.html#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Logo</a>
+        <a href="./index.html#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
+        <a href="./index.html#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
+        <a href="./index.html#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Price</a>
+        <a href="./index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                <a href="./index.html#" class="w3-bar-item w3-button">Link</a>
+                <a href="./index.html#" class="w3-bar-item w3-button">Link</a>
+                <a href="./index.html#" class="w3-bar-item w3-button">Link</a>
+            </div>
+        </div>
+        <a href="./index.htm#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i
+                class="fa fa-search"></i></a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+        <a href="./index.html#team" class="w3-bar-item w3-button">Team</a>
+        <a href="./index.html#work" class="w3-bar-item w3-button">Work</a>
+        <a href="./index.html#pricing" class="w3-bar-item w3-button">Price</a>
+        <a href="./index.html#contact" class="w3-bar-item w3-button">Contact</a>
+        <a href="./index.html#" class="w3-bar-item w3-button">Search</a>
+    </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+    <img id="headImg" src="./img/header.jpg" alt="boat">
+    <div class="w3-container w3-display-bottomleft w3-margin-bottom">
+        <button onclick="document.getElementById(&#39;id01&#39;).style.display=&#39;block&#39;"
+                class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">LEARN W3.CSS
+        </button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-teal w3-display-container">
+            <span onclick="document.getElementById(&#39;id01&#39;).style.display=&#39;none&#39;"
+                  class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+            <h4>Oh snap! We just showed you a modal..</h4>
+            <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+        </header>
+        <div class="w3-container">
+            <p>Cool huh? Ok, enough teasing around..</p>
+            <p>Go to our <a class="w3-text-teal" href="https://www.w3schools.com/w3css/default.asp">W3.CSS Tutorial</a>
+                to learn more!</p>
+        </div>
+        <footer class="w3-container w3-teal">
+            <p>Modal footer</p>
+        </footer>
+    </div>
+</div>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+    <h2>OUR TEAM</h2>
+    <p>Meet the team - our office rats:</p>
+
+    <div class="w3-row"><br>
+
+        <div class="w3-quarter">
+            <img src="./img/avatar1.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Johnny Walker</h3>
+            <p>Web Designer</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./img/avatar2.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Rebecca Flex</h3>
+            <p>Support</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./img/avatar3.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Jan Ringo</h3>
+            <p>Boss man</p>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="./img/avatar4.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Kai Ringo</h3>
+            <p>Fixer</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+    <div class="w3-quarter">
+        <h2>Our Work</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div id="work1" class="w3-quarter">
+        <div class="w3-card w3-white">
+            <img src="./img/work1.jpg" alt="Snow" style="width:100%">
+            <div class="w3-container">
+                <h3>Customer 1</h3>
+                <h4>Trade</h4>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="work2" class="w3-quarter">
+        <div class="w3-card w3-white">
+            <img src="./img/work2.jpg" alt="Lights" style="width:100%">
+            <div class="w3-container">
+                <h3>Customer 2</h3>
+                <h4>Trade</h4>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="work3" class="w3-quarter">
+        <div class="w3-card w3-white">
+            <img src="./img/work3.jpg" alt="Mountains" style="width:100%">
+            <div class="w3-container">
+                <h3>Customer 3</h3>
+                <h4>Trade</h4>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+                <p>Blablabla</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Container -->
+<div class="w3-container" style="position:relative">
+    <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal" style="position:absolute;top:-28px;right:24px">+</a>
+</div>
+
+<!-- Pricing Row -->
+<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
+    <h2>PRICING</h2>
+    <p>Choose a pricing plan that fits your needs.</p><br>
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Basic</p>
+            </li>
+            <li class="w3-padding-16"><b>10GB</b> Storage</li>
+            <li class="w3-padding-16"><b>10</b> Emails</li>
+            <li class="w3-padding-16"><b>10</b> Domains</li>
+            <li class="w3-padding-16"><b>Endless</b> Support</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 10</h2>
+                <span class="w3-opacity">per month</span>
+            </li>
+            <li class="w3-theme-l5 w3-padding-24">
+                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme-l2">
+                <p class="w3-xlarge">Pro</p>
+            </li>
+            <li class="w3-padding-16"><b>25GB</b> Storage</li>
+            <li class="w3-padding-16"><b>25</b> Emails</li>
+            <li class="w3-padding-16"><b>25</b> Domains</li>
+            <li class="w3-padding-16"><b>Endless</b> Support</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
+                <span class="w3-opacity">per month</span>
+            </li>
+            <li class="w3-theme-l5 w3-padding-24">
+                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Premium</p>
+            </li>
+            <li class="w3-padding-16"><b>50GB</b> Storage</li>
+            <li class="w3-padding-16"><b>50</b> Emails</li>
+            <li class="w3-padding-16"><b>50</b> Domains</li>
+            <li class="w3-padding-16"><b>Endless</b> Support</li>
+            <li class="w3-padding-16">
+                <h2 class="w3-wide"><i class="fa fa-usd"></i> 50</h2>
+                <span class="w3-opacity">per month</span>
+            </li>
+            <li class="w3-theme-l5 w3-padding-24">
+                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+    <div class="w3-row">
+        <div class="w3-col m5">
+            <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+            <h3>Address</h3>
+            <p>Swing by for a cup of coffee, or whatever.</p>
+            <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;Chicago, US</p>
+            <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;+00 1515151515</p>
+            <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;test@test.com</p>
+        </div>
+        <div class="w3-col m7">
+            <form id="form" name="ContactForm" class="w3-container w3-card-4 w3-padding-16 w3-white">
+                <div class="w3-section">
+                    <label>Name</label><br>
+                    <label class="error" id="nameInput"></label>
+                    <input class="w3-input" type="text" name="Name">
+                </div>
+                <div class="w3-section">
+                    <label>Email</label><br>
+                    <label class="error" id="emailInput"></label>
+                    <input class="w3-input" type="text" name="Email">
+                </div>
+                <div class="w3-section">
+                    <label>Message</label><br>
+                    <label class="error" id="messageInput"></label>
+                    <input class="w3-input" type="text" name="Message">
+                </div>
+                <input type="checkbox" checked="" name="Like">
+                <label>I Like it!</label>
+            </form>
+            <button onclick="validateForm()" class="w3-button w3-right w3-theme">Send</button>
+
+        </div>
+    </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="./img/map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d830.6345181253782!2d7.4446116!3d46.9562748!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e3994cdc40c77%3A0xf8a8891de27bb5c1!2sRandweg%205A%2C%203013%20Bern!5e1!3m2!1sde!2sch!4v1663310348207!5m2!1sde!2sch"
+        width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+    <h4>Follow Us</h4>
+    <a class="w3-button w3-large w3-teal" id="facebookButton" href="javascript:void(0)" title="Facebook"><i
+            class="fa fa-facebook"></i></a>
+    <a class="w3-button w3-large w3-teal" id="twitterButton" href="javascript:void(0)" title="Twitter"><i
+            class="fa fa-twitter"></i></a>
+    <a class="w3-button w3-large w3-teal" id="youtubeButton" href="javascript:void(0)" title="Youtube +"><i
+            class="fa fa-youtube"></i></a>
+    <a class="w3-button w3-large w3-teal" id="instagrammButton" href="javascript:void(0)" title="Google +"><i
+            class="fa fa-instagram"></i></a>
+    <a class="w3-button w3-large w3-teal" id="linkedinButton" href="javascript:void(0)" title="Linkedin"><i
+            class="fa fa-linkedin"></i></a><br><br>
+    <button id="myBtn" class="w3-button w3-teal w3-padding-large">Imprint</button>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+
+
+    <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
+        <a class="w3-button w3-theme" href="./index.html#"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+    </div>
+
+    <div id="myModal" class="modal imprint-modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Imprint</h2>
+            </div>
+            <div class="modal-body">
+                <h2>Unsere Adresse</h2>
+                <p>Allroundinformatik AG <br>
+                    Strasse 99a<br>
+                    3333 Ort</p>
+
+                <h2>So erreichen Sie uns</h2>
+                <p>
+                    Telefon +41 33 000 00 00 <br>
+                    <a href="mailto:support@alroundinformatik.ch">support@alroundinformatik.ch</a>
+
+                </p>
+                <h2>Bilder und Texte auf dieser Website</h2>
+                <p>©Fotos: alle Lizenzen und Verwendungsrechte bei Allroundinformatik AG <br>
+                    ©Texte: alle Urheber- und Verwendungsrechte bei Allroundinformatik AG</p>
+
+                <H2>Kontakt</H2>
+                <p>Am schnellsten geht's mit unserem <a onclick="closeModal()" href="#contact">Kontaktformular</a></p>
+
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+    // Script for side navigation
+    function w3_open() {
+        var x = document.getElementById("mySidebar");
+        x.style.width = "300px";
+        x.style.paddingTop = "10%";
+        x.style.display = "block";
+    }
+
+    // Close side navigation
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+    let work1 = document.getElementById("work1");
+    let work2 = document.getElementById("work2");
+    let work3 = document.getElementById("work3");
+    work1.addEventListener("mouseover", mOver, false);
+    work1.addEventListener("mouseout", mOut, false);
+    work2.addEventListener("mouseover", mOver2, false);
+    work2.addEventListener("mouseout", mOut2, false);
+    work3.addEventListener("mouseover", mOver3, false);
+    work3.addEventListener("mouseout", mOut3, false);
+
+    function mOver() {
+        document.getElementById("work1").classList.add("circling")
+    }
+
+    function mOut() {
+        document.getElementById("work1").classList.remove("circling")
+    }
+
+    function mOver2() {
+        document.getElementById("work2").classList.add("circling")
+    }
+
+    function mOut2() {
+        document.getElementById("work2").classList.remove("circling")
+    }
+
+    function mOver3() {
+        document.getElementById("work3").classList.add("circling")
+    }
+
+    function mOut3() {
+        document.getElementById("work3").classList.remove("circling")
+    }
+
+    function validateForm() {
+        let name = document.forms["ContactForm"]["Name"].value;
+        let email = document.forms["ContactForm"]["Email"].value;
+        let message = document.forms["ContactForm"]["Message"].value;
+        document.getElementById("nameInput").innerHTML = "";
+        document.getElementById("emailInput").innerHTML = "";
+        document.getElementById("messageInput").innerHTML = "";
+        let errors = {
+            "name": "",
+            "email": "",
+            "message": ""
+        }
+        let valid = true;
+        if (name.trim() === "") {
+            errors.name = "Name can't be blank!"
+            valid = false;
+        }
+        if (!name.match(/^[a-zA-Z\s]*$/)) {
+            errors.name = "Name can't contain special characters or numbers!"
+            valid = false;
+        }
+        if (email.trim() === "") {
+            errors.email = "Email can't be blank!"
+            valid = false;
+        }
+        if (!email.match(/^\S+@\S+\.\S+$/)) {
+            errors.email = "Email is not valid!"
+            valid = false;
+        }
+        if (message.trim() === "") {
+            errors.message = "Message can't be blank!"
+            valid = false;
+        }
+        if (message.trim().length < 10) {
+            errors.message = "Message must contain at least 10 characters!"
+            valid = false;
+        }
+        if (!valid) {
+            document.getElementById("nameInput").innerHTML = errors.name;
+            document.getElementById("emailInput").innerHTML = errors.email;
+            document.getElementById("messageInput").innerHTML = errors.message;
+            return false
+
+        } else {
+            document.getElementById("form").reset();
+            alert("Your Form was Valid :)")
+        }
+    }
+
+    let modal = document.getElementById("myModal");
+
+    let btn = document.getElementById("myBtn");
+
+    let span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+
+
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+
+</script>
+
+
+<span style="border-radius: 10px !important; text-indent: 12px !important; width: auto !important; height: 20px !important; padding: 0 8px !important; text-align: center !important; vertical-align: middle !important; font: bold 11px / 20px &quot;Helvetica Neue&quot;, Helvetica, sans-serif !important; color: rgb(255, 255, 255) !important; background: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNiIgY3k9IjYiIHI9IjYiIGZpbGw9IiNFNjAwMjMiPjwvY2lyY2xlPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNkMwIDguNTYxNSAxLjYwNTUgMTAuNzQ4NSAzLjg2NSAxMS42MDlDMy44MSAxMS4xNDA1IDMuNzUxNSAxMC4zNjggMy44Nzc1IDkuODI2QzMuOTg2IDkuMzYgNC41NzggNi44NTcgNC41NzggNi44NTdDNC41NzggNi44NTcgNC4zOTk1IDYuNDk5NSA0LjM5OTUgNS45N0M0LjM5OTUgNS4xNCA0Ljg4MDUgNC41MiA1LjQ4IDQuNTJDNS45OSA0LjUyIDYuMjM2IDQuOTAyNSA2LjIzNiA1LjM2MUM2LjIzNiA1Ljg3MzUgNS45MDk1IDYuNjM5NSA1Ljc0MSA3LjM1QzUuNjAwNSA3Ljk0NDUgNi4wMzk1IDguNDI5NSA2LjYyNTUgOC40Mjk1QzcuNjg3IDguNDI5NSA4LjUwMzUgNy4zMSA4LjUwMzUgNS42OTRDOC41MDM1IDQuMjYzNSA3LjQ3NTUgMy4yNjQgNi4wMDggMy4yNjRDNC4zMDkgMy4yNjQgMy4zMTE1IDQuNTM4NSAzLjMxMTUgNS44NTZDMy4zMTE1IDYuMzY5NSAzLjUwOSA2LjkxOTUgMy43NTYgNy4yMTlDMy44MDQ1IDcuMjc4NSAzLjgxMiA3LjMzIDMuNzk3NSA3LjM5MDVDMy43NTIgNy41Nzk1IDMuNjUxIDcuOTg1IDMuNjMxNSA4LjA2OEMzLjYwNSA4LjE3NyAzLjU0NSA4LjIwMDUgMy40MzE1IDguMTQ3NUMyLjY4NTUgNy44MDA1IDIuMjE5NSA2LjcxIDIuMjE5NSA1LjgzNEMyLjIxOTUgMy45NDk1IDMuNTg4IDIuMjE5NSA2LjE2NTUgMi4yMTk1QzguMjM3NSAyLjIxOTUgOS44NDggMy42OTYgOS44NDggNS42NjlDOS44NDggNy43Mjc1IDguNTUwNSA5LjM4NDUgNi43NDg1IDkuMzg0NUM2LjE0MyA5LjM4NDUgNS41NzQ1IDkuMDY5NSA1LjM3OTUgOC42OThDNS4zNzk1IDguNjk4IDUuMDggOS44MzkgNS4wMDc1IDEwLjExOEM0Ljg2NjUgMTAuNjYgNC40NzU1IDExLjM0NiA0LjIzMyAxMS43MzU1QzQuNzkyIDExLjkwNzUgNS4zODUgMTIgNiAxMkM5LjMxMzUgMTIgMTIgOS4zMTM1IDEyIDZDMTIgMi42ODY1IDkuMzEzNSAwIDYgMEMyLjY4NjUgMCAwIDIuNjg2NSAwIDZaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 4px 50% / 12px 12px no-repeat rgb(230, 0, 35) !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: none !important; -webkit-font-smoothing: antialiased !important; top: 10px; left: 10px;">Merken</span>
+<span style="border-radius: 12px; width: 24px !important; height: 24px !important; background: url(&quot;data:image/svg+xml;base64,PHN2ZyBpZD0ic291cmNlIiB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMiAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTEiIGN5PSIxMSIgcj0iMTEiIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuOCI+PC9jaXJjbGU+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTUuMDgzNCA0LjU4MzMzSDEzLjMzMzRWNS43NDk5OUgxNS4wODM0QzE1LjcyNjggNS43NDk5OSAxNi4yNSA2LjI3MzI0IDE2LjI1IDYuOTE2NjZWOC42NjY2NkgxNy40MTY3VjYuOTE2NjZDMTcuNDE2NyA1LjYyOTgzIDE2LjM3MDIgNC41ODMzMyAxNS4wODM0IDQuNTgzMzNaTTE2LjI1IDE1LjA4MzNDMTYuMjUgMTUuNzI2NyAxNS43MjY4IDE2LjI1IDE1LjA4MzQgMTYuMjVIMTMuMzMzNFYxNy40MTY3SDE1LjA4MzRDMTYuMzcwMiAxNy40MTY3IDE3LjQxNjcgMTYuMzcwMiAxNy40MTY3IDE1LjA4MzNWMTMuMzMzM0gxNi4yNVYxNS4wODMzWk01Ljc1MDA0IDE1LjA4MzNWMTMuMzMzM0g0LjU4MzM3VjE1LjA4MzNDNC41ODMzNyAxNi4zNzAyIDUuNjI5ODcgMTcuNDE2NyA2LjkxNjcxIDE3LjQxNjdIOC42NjY3MVYxNi4yNUg2LjkxNjcxQzYuMjczMjkgMTYuMjUgNS43NTAwNCAxNS43MjY3IDUuNzUwMDQgMTUuMDgzM1pNNS43NTAwNCA2LjkxNjY2QzUuNzUwMDQgNi4yNzMyNCA2LjI3MzI5IDUuNzQ5OTkgNi45MTY3MSA1Ljc0OTk5SDguNjY2NzFWNC41ODMzM0g2LjkxNjcxQzUuNjI5ODcgNC41ODMzMyA0LjU4MzM3IDUuNjI5ODMgNC41ODMzNyA2LjkxNjY2VjguNjY2NjZINS43NTAwNFY2LjkxNjY2Wk05LjI1MDA0IDEwLjcwODNDOS4yNTAwNCA5LjkwNDQ5IDkuOTA0NTQgOS4yNDk5OSAxMC43MDg0IDkuMjQ5OTlDMTEuNTEyMiA5LjI0OTk5IDEyLjE2NjcgOS45MDQ0OSAxMi4xNjY3IDEwLjcwODNDMTIuMTY2NyAxMS41MTIyIDExLjUxMjIgMTIuMTY2NyAxMC43MDg0IDEyLjE2NjdDOS45MDQ1NCAxMi4xNjY3IDkuMjUwMDQgMTEuNTEyMiA5LjI1MDA0IDEwLjcwODNaTTEzLjYyNSAxNC41QzEzLjg0OSAxNC41IDE0LjA3MyAxNC40MTQ4IDE0LjI0NCAxNC4yNDM5QzE0LjU4NTIgMTMuOTAyMSAxNC41ODUyIDEzLjM0NzkgMTQuMjQ0IDEzLjAwNjFMMTMuMDcwMyAxMS44MzNDMTMuMjM0MiAxMS40OTA2IDEzLjMzMzQgMTEuMTEyNiAxMy4zMzM0IDEwLjcwODNDMTMuMzMzNCA5LjI2MTA4IDEyLjE1NTYgOC4wODMzMyAxMC43MDg0IDguMDgzMzNDOS4yNjExMiA4LjA4MzMzIDguMDgzMzcgOS4yNjEwOCA4LjA4MzM3IDEwLjcwODNDOC4wODMzNyAxMi4xNTU2IDkuMjYxMTIgMTMuMzMzMyAxMC43MDg0IDEzLjMzMzNDMTEuMTEyNiAxMy4zMzMzIDExLjQ5MDYgMTMuMjM0MiAxMS44MzMgMTMuMDcwMkwxMy4wMDYxIDE0LjI0MzlDMTMuMTc3IDE0LjQxNDggMTMuNDAxIDE0LjUgMTMuNjI1IDE0LjVaIiBmaWxsPSJ3aGl0ZSI+PC9wYXRoPgo8L3N2Zz4=&quot;) 50% 50% / 24px 24px no-repeat rgba(0, 0, 0, 0.4) !important; position: absolute !important; opacity: 1 !important; z-index: 8675309 !important; display: none; cursor: pointer !important; border: none !important; top: 10px; left: 1871px;"></span>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+#table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+#introduction p {
+    margin-bottom: 30px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #a3a1a1;
+}
+
+article {
+    margin-bottom: 100px;
+}
+
+@media screen and (min-width: 720px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "introduction introduction" "table table";
+
+    }
+
+    #table {
+        grid-area: table;
+        width: 90%;
+    }
+
+    #introduction {
+        width: 60%;
+        text-align: center;
+        grid-area: introduction;
+
+    }
+
+
+}
+
+@media screen and (min-width: 1080px) {
+    #introduction {
+        width: 40%;
+    }
+}

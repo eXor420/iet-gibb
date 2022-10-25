@@ -1,0 +1,11 @@
+ID;Vorname;Nachname;Geburtsdatum;E-Mail-Adresse;Strasse;Hausnummer;OrtID
+1;Marko;Jaronsen;23.08.2002;marko@gmail.com;Baumstrasse;69;1
+2;Mike;Oxlohng;30.04.1993;mike@gmail.com;Stenstrasse;187;10
+3;Finn;Baumann;08.06.1999;finn@gmail.com;Holzstrasse;420;2
+4;Ryan;Stekken;14.06.2005;ryan@gmail.com;Wasserstrasse;42;4
+5;Isaac;Newton;03.04.2002;isaac@gmail.com;Erdstrasse;13;6
+6;Abraham;Herren;23.10.1996;abraham@gmail.com;Feuerstrasse;7;7
+7;Juan;Matter;02.08.1969;juan@gmail.com;Kluftstrasse;34;3
+8;Amaru;Löhnert;30.11.1985;amaru@gmail.com;Bergstrasse;19;5
+9;Lukas;Zysset;23.02.1987;lukas@gmail.com;Talstrasse;6;9
+10;Simon;Zimmermann;06.12.2011;simon@gmail.com;Hügelstrasse;2;8

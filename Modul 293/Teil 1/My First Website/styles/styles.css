@@ -1,0 +1,45 @@
+
+
+body{
+    text-align: center;
+    font-family: "Dialog", sans-serif;
+    animation: example 20s infinite;
+}
+
+p{
+    font-size: 23px;
+    margin-right: 600px;
+    margin-left: 600px;
+    margin-bottom: 150PX;
+
+}
+h1{
+    font-size: 50px;
+    font-style: oblique;
+    color: red;
+    margin-bottom: 100px;
+}
+h2{
+    font-size: 35px;
+    font-style: oblique;
+    color: red;
+}
+footer {
+    padding: 3px;
+    background-color: #ff0000;
+    color: white;
+    margin-bottom: 0;
+}
+footer p{
+    margin-bottom: 20px;
+}
+
+img{
+    border-radius: 25px;
+}
+@keyframes example {
+    0%   {background-color: green;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}

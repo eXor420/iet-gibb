@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Responsive Website</title>
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<header>
+    <div class="topnav" id="myTopnav">
+        <a href="/" class="active">Home</a>
+        <a href="https://gibb.ch/">Gibb</a>
+        <a href="https://www.wikipedia.org/">Wikipedia</a>
+        <a href="/imprint.html">Imprint</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <script>
+        function myFunction() {
+            let x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</header>
+
+<main>
+    <h1>
+        This is my Imprint
+    </h1>
+    <br>
+    <article>
+        <h2>
+            Contact
+        </h2>
+        <h3>
+            Address Gibb IET Bern
+        </h3>
+        <p> gibb - Campus IET <br>
+            Lorrainestrasse 5B <br>
+            3013 Bern
+        </p>
+        <h3>
+            Contact
+        </h3>
+        <p><a href="https://gibb.ch/">
+            Gibb
+        </a>
+        </p>
+
+    </article>
+
+    <article>
+        <h2>
+            Quells
+        </h2>
+        <p>
+            <a href="https://www.w3schools.com/">
+                Navbar
+            </a>
+            <br>
+            <a href="https://www.w3schools.com/">
+                Footer
+            </a>
+            <br>
+            <a href="https://developer.mozilla.org/de/">
+                Some other Infos
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h2>W3C-Validation</h2>
+        <br>
+        <p>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                     src="http://jigsaw.w3.org/css-validator/images/vcss"
+                     alt="CSS ist valide!"/>
+            </a>
+        </p>
+    </article>
+
+</main>
+
+
+<footer>
+    <p>Author: Example<br>
+        <a href="mailto:example@gmx.ch">Contact Me!</a></p>
+</footer>
+
+
+</body>
+</html>

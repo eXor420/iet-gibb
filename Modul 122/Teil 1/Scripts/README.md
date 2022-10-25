@@ -1,0 +1,1 @@
+Aufpassen! Rechner unter Bash kann keine FLiesskommazahlen und ich habe ein paar Punkte abgezogen bekommen :(

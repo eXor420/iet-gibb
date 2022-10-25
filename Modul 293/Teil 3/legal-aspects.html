@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechtliche Aspekte</title>
+    <link rel="stylesheet" href="Style/navbar.css">
+    <link rel="stylesheet" href="Style/global.css">
+</head>
+
+<body>
+<!-- Some parts of the Menu are From https://codepen.io/Javscript/pen/jOBbRpa -->
+<header>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" id="home">MDa</a>
+        <a href="webhosting.html">Webhosting-Anbieter </a>
+        <a href="./legal-aspects.html">Rechtliche Aspekte </a>
+        <a href="mock-up.html">Mock Up </a>
+        <a href="about.html">About</a>
+        <a href="javascript:void(0);" class="hamburger" id="icon" onclick="openMenu()">
+            ☰
+        </a>
+    </div>
+</header>
+<main>
+    <!-- Grid-Container wird genutzt um ein Raster zu gestalten um die Seite responsive zu gestalten. -->
+    <div class="grid-container">
+        <article>
+            <h2>Impressum</h2>
+            <p>Es gibt eine sogenannte Impressumspflicht welche eine dazu verpflichtet dass ein Impressum auf der
+                Website
+                vorhanden sein muss. Das Impressum dient dazu, dass der Nutzer der Website erkennen kann mit wem er es
+                zu
+                tun hat oder wer hinter der Website steckt. Es gibt jedoch auch eine Sonderregelung was komplett private
+                Websites betrifft. Wer die Impressumspflicht verletzt, dem droht eine Geldstrafe oder bis zu 3 Jahren
+                Freiheitsstrafe.</p>
+        </article>
+        <article>
+            <h2>Urheberrecht</h2>
+            <p>Das Urheberrecht dien dazu, dass der Urheber darüber bestimmen kann, wer und wie sein Werk genutzt werden
+                darf. Darunter fallen Dinge wie Kunst, Fotos, Videos, Programmcode und sogar auch das Layout einer
+                Website. Jedoch gibt es spezielle Lizenzen unter welchen der Künstler seine Werke veröffentlichen kann
+                und mit diesen festlegen kann, wer die Werke unter welchen Bedingungen nutzen darf. Zu den bekanntesten
+                gehören die Creative Commons Lizenzen. Wer das Urheberrecht verletzt, dem droht eine Geldstrafe oder
+                eine
+                Freiheitsstrafe von bis zu einem Jahr.</p>
+        </article>
+        <article>
+            <h2>Standortwahl des Webservers</h2>
+            <p>Es empfiehlt sich einen Server in der Region der sogenannten Zielgruppe zu haben. Dass heisst, wenn ich
+                eine Website für meinen Fussballclub in meinem Dorf mache, ist es nicht besonders schlau die Website in
+                Australien zu hosten. Das ganze dient vor allem den Suchalgorithmen von Google, Bing usw. Ausserdem gibt
+                es rechtliche Aspekte da in anderen Ländern andere Gesetzte gelten.</p>
+        </article>
+        <article>
+            <h2>Persoenlichkeitsschutz</h2>
+            <p>Dabei geht es um den Datenschutz. Da unsere Dienste sehr wahrscheinlich auch für EU-Bürger verfügbar
+                sind, müssen wir uns somit an die DSGVO halten. Dazu gehört, dass wir den Nutzer zuerst fragen, ob er
+                z.B.
+                Marketing-Cookies akzeptiert und auch angeben, wofür wir persönliche Daten sammeln. Denn wir dürfen
+                nicht
+                einfach willkürlich Daten über eine Person sammeln, welche wir eigentlich gar nicht benötigen. Ausserdem
+                verständliche und übersichtliche Datenschutzerklärungen erstellen und sensible Daten verschlüsseln. Auch
+                hier kann eine Missachtung zu Geldstrafen und Freiheitsstrafen von bis zu 3 Jahren führen.</p>
+        </article>
+
+    </div>
+</main>
+<!-- Falls das Display zu klein ist wird kein Inhalt mehr angezeigt -->
+<div class="displayTooSmall">
+    <h2>Sorry :(</h2>
+    <p>Your screen is too small to show some Content!</p>
+</div>
+<footer>
+    <p><a href="imprint.html">Impressum</a> | <a href="contact.html">Konatkt</a></p>
+</footer>
+<script>
+    <!-- Grid-Container wird genutzt um ein Raster zu gestalten um die Seite responsive zu gestalten. -->
+    function openMenu() {
+        let navBar = document.getElementById("myTopnav");
+        let icon = document.getElementById("icon");
+        if (navBar.className === "topnav") {
+            navBar.className += " responsive";
+            icon.innerHTML = "X";
+
+        } else {
+            navBar.className = "topnav";
+            icon.innerHTML = "☰";
+
+        }
+
+    }
+
+</script>
+</body>
+</html>
