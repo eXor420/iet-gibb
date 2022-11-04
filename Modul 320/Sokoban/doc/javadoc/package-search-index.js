@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ch.gibb.aufgaben"},{"l":"ch.gibb.aufgaben.company"},{"l":"ch.gibb.common"},{"l":"ch.gibb.game"},{"l":"ch.gibb.gui"},{"l":"ch.gibb.main"},{"l":"ch.gibb.model"}];updateSearchResults();

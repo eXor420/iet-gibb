@@ -1,0 +1,1 @@
+Um das Game zu starten muss die Gradle-Task Sokoban --> application --> run
