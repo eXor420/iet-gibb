@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="GradeBook.SubjectCreateDialog"
+           Color="Transparent">
+
+    <Border
+        Stroke="#21B1FF"
+        StrokeThickness="2"
+        StrokeShape="RoundRectangle 40,40,40,40">
+
+
+        <VerticalStackLayout BackgroundColor="White" Padding="30, 20, 30, 20">
+            <Label 
+            Text="Add new Subject"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start"
+                FontSize="30"/>
+            <VerticalStackLayout VerticalOptions="Center" Margin="0, 30, 0, 70">
+                <Label Margin="0, 0, 0, 10" Text="Name:" />
+                <Entry Margin="0, 0, 0, 10" Placeholder="example123" />
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="End">
+                    <Border Stroke="#21B1FF"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                            Margin="0, 0, 20, 0">
+                        <Button Text="Cancel" WidthRequest="120" BackgroundColor="Black" TextColor="#21B1FF" Clicked="onCancel"/>
+                    </Border>
+
+                    <Border Stroke="#21B1FF"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button Text="Save" WidthRequest="120" BackgroundColor="Black" TextColor="#21B1FF" Clicked="onSave"/>
+
+                    </Border>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+
+        </VerticalStackLayout>
+    </Border>
+</mct:Popup>

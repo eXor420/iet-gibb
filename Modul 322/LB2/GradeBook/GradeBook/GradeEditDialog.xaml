@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="GradeBook.GradeEditDialog"
+           Color="Transparent"
+           Size="700, 380">
+
+    <Border
+        Stroke="#21B1FF"
+        StrokeThickness="2"
+        StrokeShape="RoundRectangle 40,40,40,40">
+
+        <VerticalStackLayout>
+            <VerticalStackLayout x:Name="edit" IsVisible="true" BackgroundColor="White" Padding="30, 20, 30, 20">
+            <Label 
+            Text="Edit Grade"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start"
+                FontSize="30"/>
+            <VerticalStackLayout VerticalOptions="Center" Margin="0, 30, 0, 10">
+                <Label Margin="0, 0, 0, 10" Text="Grade:" />
+                <Entry Margin="0, 0, 0, 10" x:Name="Grade" Placeholder="X.XX" />
+            </VerticalStackLayout>
+                <VerticalStackLayout VerticalOptions="Center" Margin="0, 0, 0, 70">
+                    <Picker x:Name="picker" Margin="0, 0, 0, 10" Title="Weighting:">
+                        <Picker.SelectedIndex>2</Picker.SelectedIndex>
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>3</x:String>
+                                <x:String>2</x:String>
+                                <x:String>1</x:String>
+                                <x:String>1/2</x:String>
+                                <x:String>1/3</x:String>
+                                <x:String>2/3</x:String>
+                                <x:String>1/4</x:String>
+                                <x:String>3/4</x:String>
+                                <x:String>1/5</x:String>
+                                <x:String>2/5</x:String>
+                                <x:String>3/5</x:String>
+                                <x:String>4/5</x:String>
+                                <x:String>4/5</x:String>
+                                <x:String>1/10</x:String>
+                                <x:String>3/10</x:String>
+                                <x:String>7/10</x:String>
+                                <x:String>9/10</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </VerticalStackLayout>
+            <VerticalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="End">
+                    <Border Stroke="#21B1FF"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                            Margin="0, 0, 20, 0">
+                        <Button Text="Cancel" WidthRequest="120" BackgroundColor="Black" TextColor="#21B1FF" Clicked="onCancel"/>
+                    </Border>
+
+                    <Border Stroke="#21B1FF"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                            Margin="0, 0, 0, 0">
+                            <Button Text="Delete" WidthRequest="120" BackgroundColor="Black" TextColor="#21B1FF" Clicked="onTryDelete"/>
+                    </Border>
+
+                    <Border Stroke="#21B1FF"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button Text="Save" WidthRequest="120" BackgroundColor="Black" TextColor="#21B1FF" Clicked="onSave"/>
+
+                    </Border>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+
+        </VerticalStackLayout>
+            <VerticalStackLayout x:Name="delete" IsVisible="false" BackgroundColor="White" Padding="30, 20, 30, 20">
+                <Label 
+            Text="Delete Grade 6.00?"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start"
+                FontSize="30"/>
+                <VerticalStackLayout>
+                    <Label Text="You will not be able to recover it!"/>
+                    <Image HorizontalOptions="Center" Margin="0,20,0,0" Source="delete_icon.png" HeightRequest="170"/>
+                    <Grid Margin="0,30,0,30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border Stroke="#21B1FF" Grid.Column="0"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                            Margin="0, 0, 10, 0" WidthRequest="150"
+                                HorizontalOptions="Center">
+                            <Button Text="Cancel" BackgroundColor="Black" FontSize="25" TextColor="#21B1FF" Clicked="onCancelDelete"/>
+                        </Border>
+
+                        <Border Stroke="#21B1FF"
+                                Grid.Column="1"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                            Margin="0, 0, 0, 0" WidthRequest="150"
+                                HorizontalOptions="Center">
+                            <Button Text="Delete"  BackgroundColor="Black" FontSize="25" TextColor="#21B1FF" Clicked="onDelete"/>
+                        </Border>
+                    </Grid>
+
+                </VerticalStackLayout>
+
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+        
+        
+    </Border>
+</mct:Popup>

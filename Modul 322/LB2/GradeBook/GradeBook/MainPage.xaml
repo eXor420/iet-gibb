@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GradeBook.MainPage"
+             BackgroundColor="#3B6175"
+             Title="MainPage">
+
+    <VerticalStackLayout>
+
+
+
+        <StackLayout HeightRequest="100" BackgroundColor="#000000" >
+            <Grid ColumnSpacing="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <VerticalStackLayout HorizontalOptions="Start" Grid.Row="0"
+                    Grid.Column="0">
+                    <Image Source="logo.png"
+                                SemanticProperties.Description="Rickpat's Logo"
+                                HeightRequest="100"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="End" Grid.Row="0"
+                    Grid.Column="2" Margin="0, 37, 20, 0">
+                    <Label FontSize="16" TextColor="#21B1FF" Text="GradeBook" />
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+
+
+        </StackLayout>
+
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+            Margin="0, 150, 0, 100">
+
+            <Border Stroke="Transparent"
+        StrokeThickness="3"
+        StrokeShape="RoundRectangle 40,40,40,40"
+        Padding="16,8"
+        HorizontalOptions="Center"
+                BackgroundColor="White">
+
+
+                <VerticalStackLayout VerticalOptions="Center" WidthRequest="600" Padding="50, 50, 50, 20">
+                    <VerticalStackLayout VerticalOptions="Center" Margin="0, 0, 0, 20">
+                        <Label Margin="0, 0, 0, 10" Text="Username:" />
+                        <Entry x:Name="Username" Margin="0, 0, 0, 10" Placeholder="example123" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout VerticalOptions="Center" Margin="0, 0, 0, 0">
+                        <Label Margin="0, 0, 0, 10" Text="Password:" />
+                        <Entry x:Name="Password" Margin="0, 0, 0, 10" IsPassword="True" Completed="OnSubmit" Placeholder="**********" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout VerticalOptions="Center" Margin="0, 0, 0, 0">
+                        <Label Margin="0, 0, 0, 10" x:Name="errorLabel" TextColor="White" HorizontalOptions="Center" Text="Incorrect login data was provided!" />
+                    </VerticalStackLayout>
+
+                    <Border
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 40,40,40,40">
+                        <Button
+                        x:Name="SubmitBtn"
+                        Text="Login!"
+                        SemanticProperties.Hint="Button to Submit the logindata"
+                        Clicked="OnSubmit"
+                        HorizontalOptions="Center" 
+                        WidthRequest="200"
+                        TextColor="#21B1FF"
+                        FontSize="25"
+                        BackgroundColor="Black"
+                        Padding="0, 15, 0, 20"/>
+                    </Border>
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 20, 0, 0">
+                        <Label  Text="No Account? Sign Up " />
+                        <Label TextColor="#21B1FF" FontAttributes="Bold" Text=" here!" >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onSignUp"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+                    
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>

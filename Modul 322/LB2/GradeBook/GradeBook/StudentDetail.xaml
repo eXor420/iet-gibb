@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GradeBook.StudentDetail"
+             Title="StudentDetail"
+             BackgroundColor="#3B6175">
+    <VerticalStackLayout>
+        <StackLayout HeightRequest="100" BackgroundColor="#000000" >
+            <Grid ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <VerticalStackLayout HorizontalOptions="Start" Grid.Row="0"
+                    Grid.Column="0">
+                    <Image Source="logo.png"
+                                SemanticProperties.Description="Rickpat's Logo"
+                                HeightRequest="100"/>
+                </VerticalStackLayout>
+
+                <Border Grid.Column="1" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                    <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToStudents"
+                            BackgroundColor="Black" Text="Students"/>
+                </Border>
+
+                <Border Grid.Column="2" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                    <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToAbout" BackgroundColor="Black" Text="About"/>
+                </Border>
+
+                <Border Grid.Column="3" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                    <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToFAQ" BackgroundColor="Black" Text="FAQ"/>
+                </Border>
+
+                <Border Grid.Column="4" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                    <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToAccount" BackgroundColor="Black" Text="Account"/>
+                </Border>
+
+                <Border Grid.Column="5" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                    <Button FontSize="16" TextColor="#21B1FF" Clicked="logOut" BackgroundColor="Black" Text="Log Out"/>
+                </Border>
+
+
+                <VerticalStackLayout HorizontalOptions="End" Grid.Row="0"
+                    Grid.Column="7" Margin="0, 37, 20, 0">
+                    <Label FontSize="16" TextColor="#21B1FF" Text="GradeBook" />
+
+                </VerticalStackLayout>
+
+            </Grid>
+        </StackLayout>
+
+        <Grid ColumnDefinitions="Auto,*,Auto">
+            <VerticalStackLayout Grid.Column="1" MaximumWidthRequest="1300">
+
+                <Grid Margin="0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Border 
+                    HorizontalOptions="Start"
+                    Stroke="Transparent"
+                    Grid.Column="0"
+                        Grid.Row="0"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 15,15, 15, 15"
+                    BackgroundColor="White"
+                        Margin="36,0,0,0">
+                        <VerticalStackLayout WidthRequest="240">
+                            <Label FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="" x:Name="StudentName" Padding="10"/>
+
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border
+                    HorizontalOptions="End"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Stroke="Transparent"
+                    StrokeShape="RoundRectangle 25,25, 25, 25"
+                        Margin="0,0,36,0">
+                        <Button 
+                    BackgroundColor="Black"
+                    TextColor="#21B1FF"
+                    Text="Add Subject"
+                        HeightRequest="50"
+                        WidthRequest="200"
+                        Clicked="onCreateNewSubject"/>
+                    </Border>
+
+                </Grid>
+
+                <Border Stroke="Transparent"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 15,15, 15, 15"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                        Margin="0,0,0,10">
+                    <FlexLayout>
+                        <HorizontalStackLayout WidthRequest="1100" HeightRequest="70">
+                            <Border Stroke="#21B1FF"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                    Margin="10">
+                                <VerticalStackLayout WidthRequest="200" HeightRequest="30">
+                                    <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" Text="Math"/>
+                                </VerticalStackLayout>
+                            </Border>
+                            <Label VerticalOptions="Center" Margin="15" FontSize="20" Text="4.5">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onEditGrade"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label VerticalOptions="Center" Margin="15" FontSize="20" Text="5.0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onEditGrade"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label VerticalOptions="Center" Margin="15" FontSize="20" Text="5.5">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onEditGrade"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout FlexLayout.AlignSelf="End">
+                            <Label VerticalOptions="Center" Margin="20" FontSize="20" Text="5.00"/>
+                            <Image
+                                Source="add_icon.png"
+                                SemanticProperties.Description="Add Icon"
+                                HeightRequest="40">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onCreateNewGrade"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </HorizontalStackLayout>
+                    </FlexLayout>
+                </Border>
+                <Border Stroke="Transparent"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 15,15, 15, 15"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                        Margin="0,0,0,10">
+                    <FlexLayout>
+                        <HorizontalStackLayout WidthRequest="1100" HeightRequest="70">
+                            <Border Stroke="#21B1FF"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                    Margin="10">
+                                <VerticalStackLayout WidthRequest="200" HeightRequest="30">
+                                    <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" Text="Englisch"/>
+                                </VerticalStackLayout>
+                            </Border>
+                            <Label VerticalOptions="Center" Margin="15" FontSize="20" Text="4.5">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onEditGrade"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label VerticalOptions="Center" Margin="15" FontSize="20" Text="5.0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onEditGrade"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label VerticalOptions="Center" Margin="15" FontSize="20" Text="6">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onEditGrade"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout FlexLayout.AlignSelf="End">
+                            <Label VerticalOptions="Center" Margin="20" FontSize="20" Text="5.17"/>
+                            <Image
+                                Source="add_icon.png"
+                                SemanticProperties.Description="Add Icon"
+                                HeightRequest="40">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onCreateNewGrade"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </HorizontalStackLayout>
+                    </FlexLayout>
+                </Border>
+                <Border Stroke="Transparent"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 15,15, 15, 15"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                        Margin="0,0,0,10">
+                    <FlexLayout>
+                        <HorizontalStackLayout WidthRequest="1100" HeightRequest="70">
+                            <Border Stroke="#21B1FF"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                    Margin="10">
+                                <VerticalStackLayout WidthRequest="200" HeightRequest="30">
+                                    <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" Text="ABU"/>
+                                </VerticalStackLayout>
+                            </Border>
+                            <Label VerticalOptions="Center" Margin="15" FontSize="20" Text="4.5">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onEditGrade"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label VerticalOptions="Center" Margin="15" FontSize="20" Text="5.0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onEditGrade"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout FlexLayout.AlignSelf="End">
+                            <Label VerticalOptions="Center" Margin="20" FontSize="20" Text="4.75"/>
+                            <Image
+                                Source="add_icon.png"
+                                SemanticProperties.Description="Add Icon"
+                                HeightRequest="40">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="onCreateNewGrade"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </HorizontalStackLayout>
+                    </FlexLayout>
+                </Border>
+            </VerticalStackLayout>
+
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

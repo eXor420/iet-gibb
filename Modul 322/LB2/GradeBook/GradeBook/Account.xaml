@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GradeBook.Account"
+             Title="Account"
+             BackgroundColor="#3B6175">
+    <VerticalStackLayout>
+        <StackLayout HeightRequest="100" BackgroundColor="#000000" >
+            <Grid ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <VerticalStackLayout HorizontalOptions="Start" Grid.Row="0"
+                    Grid.Column="0">
+                    <Image Source="logo.png"
+                                SemanticProperties.Description="Rickpat's Logo"
+                                HeightRequest="100"/>
+                </VerticalStackLayout>
+
+                <Border x:Name="studentsNav" Grid.Column="1" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                    <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToStudents"
+                            BackgroundColor="Black" Text="Students"/>
+                </Border>
+
+                <Border x:Name="aboutNav" Grid.Column="2" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                    <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToAbout" BackgroundColor="Black" Text="About"/>
+                </Border>
+
+                <Border x:Name="faqNav" Grid.Column="3" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                    <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToFAQ" BackgroundColor="Black" Text="FAQ"/>
+                </Border>
+
+                <Border x:Name="accountNav" Grid.Column="4" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                    <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToAccount" BackgroundColor="Black" Text="Account"/>
+                </Border>
+
+                <Border x:Name="logoutNav" Grid.Column="5" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                    <Button FontSize="16" TextColor="#21B1FF" Clicked="logOut" BackgroundColor="Black" Text="Log Out"/>
+                </Border>
+
+
+                <VerticalStackLayout HorizontalOptions="End" Grid.Row="0"
+                    Grid.Column="7" Margin="0, 37, 20, 0">
+                    <Label FontSize="16" TextColor="#21B1FF" Text="GradeBook" />
+
+                </VerticalStackLayout>
+
+            </Grid>
+        </StackLayout>
+
+        <VerticalStackLayout
+            VerticalOptions="Center">
+
+            <Border Stroke="Transparent"
+                    StrokeThickness="3"
+                    Margin="0, 40, 0, 0"
+                    StrokeShape="RoundRectangle 40,40,40,40"
+                    Padding="16,8"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White">
+
+
+                <VerticalStackLayout VerticalOptions="Center" WidthRequest="1000" Padding="40, 20, 50, 20">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" FontSize="30" Margin="0,0,0,20" x:Name="Title"/>
+                        <Image x:Name="deleteButton" Grid.Column="1" HorizontalOptions="End" Source="delete_icon.png" HeightRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onDelete"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                    
+
+                    <Grid ColumnSpacing="40" RowSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout Grid.Column="0" Grid.Row="0">
+                            <Label Margin="0, 0, 0, 5" Text="Username:" />
+                            <Entry x:Name="Username" Margin="0, 0, 0, 0" Placeholder="exaple1234" />
+                            <Label Margin="0, 0, 0, 0" x:Name="errorUsername" TextColor="Red"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="1" Grid.Row="0">
+                            <Label Margin="0, 0, 0, 5" Text="Password:" />
+                            <Entry x:Name="Password" IsPassword="True" Margin="0, 0, 0, 0" Placeholder="***********" />
+                            <Label Margin="0, 0, 0, 0" x:Name="errorPassword" TextColor="Red"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="0" Grid.Row="1">
+                            <Label Margin="0, 0, 0, 5" Text="Name:" />
+                            <Entry x:Name="Name" Margin="0, 0, 0, 0" Placeholder="Firstname Lastname" />
+                            <Label Margin="0, 0, 0, 0" x:Name="errorName" TextColor="Red"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="1" Grid.Row="1">
+                            <Label Margin="0, 0, 0, 5" Text="Birthday:" />
+                            <DatePicker x:Name="Birthday" Format="dd/mm/yyyy" Margin="0,0,0,0" />
+                            <Label Margin="0, 0, 0, 0" x:Name="errorBirthday" TextColor="Red"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="0" Grid.Row="2">
+                            <Label Margin="0, 0, 0, 5" Text="E-Mail:" />
+                            <Entry x:Name="EMail" Margin="0, 0, 0, 0" Placeholder="example1234@gmx.com" />
+                            <Label Margin="0, 0, 0, 0" x:Name="errorEmail" TextColor="Red"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="1" Grid.Row="2">
+                            <Label Margin="0, 0, 0, 5" Text="Phone:" />
+                            <Entry x:Name="Phone" Margin="0, 0, 0, 0" Placeholder="079 XXX XX XX" />
+                            <Label Margin="0, 0, 0, 0" x:Name="errorPhone" TextColor="Red"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="0" Grid.Row="3">
+                            <Label Margin="0, 0, 0, 5" Text="Street and Number:" />
+                            <Entry x:Name="StreetNumber" Margin="0, 0, 0, 0" Placeholder="Bahnhofstrasse 69" />
+                            <Label Margin="0, 0, 0, 0" x:Name="errorStreetNumber" TextColor="Red"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="1" Grid.Row="3">
+                            <Label Margin="0, 0, 0, 5" Text="City:" />
+                            <Entry x:Name="City" Margin="0, 0, 0, 0" Placeholder="Bern" />
+                            <Label Margin="0, 0, 0, 0" x:Name="errorCity" TextColor="Red"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="0" Grid.Row="4">
+                            <Label Margin="0, 0, 0, 5" Text="Zip-Code:" />
+                            <Entry x:Name="ZipCode" Margin="0, 0, 0, 0" Placeholder="3000" />
+                            <Label Margin="0, 0, 0, 0" x:Name="errorZipcode" TextColor="Red"/>
+                        </VerticalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="End" Grid.Column="1" Grid.Row="4" Margin="0, 20, 0, 0">
+                            <Border x:Name="CancelButton" Stroke="#21B1FF"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                            Margin="0, 0, 20, 0">
+                                <Button Text="Cancel" WidthRequest="120" BackgroundColor="Black" TextColor="#21B1FF" Clicked="onCancel"/>
+                            </Border>
+
+                            <Border Stroke="#21B1FF"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20">
+                                <Button Text="Save" WidthRequest="120" BackgroundColor="Black" TextColor="#21B1FF" Clicked="onSave"/>
+
+                            </Border>
+                        </HorizontalStackLayout>
+                    </Grid>
+                    
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

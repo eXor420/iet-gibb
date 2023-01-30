@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="GradeBook.AccountDeleteConfirmDialog"
+           Color="Transparent"
+           Size="700, 380">
+
+    <Border
+        Stroke="#21B1FF"
+        StrokeThickness="2"
+        StrokeShape="RoundRectangle 40,40,40,40">
+
+        <VerticalStackLayout BackgroundColor="White" Padding="30, 20, 30, 20">
+            <Label 
+            x:Name="title"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start"
+                FontSize="30"/>
+            <VerticalStackLayout>
+                <Label Text="You will not be able to recover it!"/>
+                <Image HorizontalOptions="Center" Margin="0,20,0,0" Source="delete_icon.png" HeightRequest="170"/>
+                <Grid Margin="0,30,0,30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Border Stroke="#21B1FF" Grid.Column="0"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                            Margin="0, 0, 10, 0" WidthRequest="150"
+                                HorizontalOptions="Center">
+                        <Button Text="Cancel" BackgroundColor="Black" FontSize="25" TextColor="#21B1FF" Clicked="onCancel"/>
+                    </Border>
+
+                    <Border Stroke="#21B1FF"
+                                Grid.Column="1"
+                         StrokeThickness="1"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                            Margin="0, 0, 0, 0" WidthRequest="150"
+                                HorizontalOptions="Center">
+                        <Button Text="Delete"  BackgroundColor="Black" FontSize="25" TextColor="#21B1FF" Clicked="onDelete"/>
+                    </Border>
+                </Grid>
+
+            </VerticalStackLayout>
+
+
+        </VerticalStackLayout>
+    </Border>
+</mct:Popup>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:GradeBook.model"
+             xmlns:viewmodel="clr-namespace:GradeBook.Viewmodel"
+             x:DataType="viewmodel:QuestionsViewModel"
+             x:Class="GradeBook.FAQ"
+             Title="FAQ"
+             BackgroundColor="#3B6175">
+    <ScrollView>
+        <VerticalStackLayout>
+
+
+            <StackLayout HeightRequest="100" BackgroundColor="#000000" >
+                <Grid ColumnSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <VerticalStackLayout HorizontalOptions="Start" Grid.Row="0"
+                    Grid.Column="0">
+                        <Image Source="logo.png"
+                                SemanticProperties.Description="Rickpat's Logo"
+                                HeightRequest="100"/>
+                    </VerticalStackLayout>
+
+                    <Border Grid.Column="1" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToStudents"
+                            BackgroundColor="Black" Text="Students"/>
+                    </Border>
+
+                    <Border Grid.Column="2" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToAbout" BackgroundColor="Black" Text="About"/>
+                    </Border>
+
+                    <Border Grid.Column="3" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToFAQ" BackgroundColor="Black" Text="FAQ"/>
+                    </Border>
+
+                    <Border Grid.Column="4" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToAccount" BackgroundColor="Black" Text="Account"/>
+                    </Border>
+
+                    <Border Grid.Column="5" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="logOut" BackgroundColor="Black" Text="Log Out"/>
+                    </Border>
+
+
+                    <VerticalStackLayout HorizontalOptions="End" Grid.Row="0"
+                    Grid.Column="7" Margin="0, 37, 20, 0">
+                        <Label FontSize="16" TextColor="#21B1FF" Text="GradeBook" />
+
+                    </VerticalStackLayout>
+
+                </Grid>
+            </StackLayout>
+
+
+
+
+            <Grid Margin="0,0,0,30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="800"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Column="1" Grid.Row="0" Stroke="Transparent"
+                                        StrokeThickness="3"
+                                        StrokeShape="RoundRectangle 40,40,40,40"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="White"
+                                    Margin="0, 30,0,0">
+                    <StackLayout Margin="0, 20" WidthRequest="800">
+                        <Label FontSize="40" HorizontalOptions="Center" Text="FAQ"/>
+
+                    </StackLayout>
+
+                </Border>
+                <CollectionView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Questions}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Question">
+                            <Border Stroke="Transparent"
+                                        StrokeThickness="3"
+                                        StrokeShape="RoundRectangle 40,40,40,40"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="White"
+                                    Margin="0, 30,0,0">
+                                <Grid Margin="0, 20" WidthRequest="800">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="600"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <VerticalStackLayout Grid.Column="1">
+                                        <Label FontSize="30" Margin="0,0,0, 10" HorizontalOptions="Center" Text="{Binding Title}"/>
+
+                                        <StackLayout HeightRequest="500">
+                                            <Image
+                                                Aspect="AspectFit"
+                                                Margin="0,0,0,20"
+                                                Source="{Binding ImageName}"
+                                                WidthRequest="{Binding Source={x:Reference parent}, Path=Width}" />
+                                            <Label
+                                                FontSize="15"
+                                                Text="{Binding Solution}"
+                                                WidthRequest="{Binding Source={x:Reference parent}, Path=Width}" />
+                                        </StackLayout>
+
+                                    </VerticalStackLayout>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

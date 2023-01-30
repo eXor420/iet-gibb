@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:GradeBook.model"
+             xmlns:viewmodel="clr-namespace:GradeBook.Viewmodel"
+             x:DataType="viewmodel:UsersViewModel"
+             x:Class="GradeBook.Students"
+             Title="Students"
+             BackgroundColor="#3B6175"> 
+    <ScrollView>
+        <VerticalStackLayout>
+
+
+
+            <StackLayout HeightRequest="100" BackgroundColor="#000000" >
+                <Grid ColumnSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <VerticalStackLayout HorizontalOptions="Start" Grid.Row="0"
+                    Grid.Column="0">
+                        <Image Source="logo.png"
+                                SemanticProperties.Description="Rickpat's Logo"
+                                HeightRequest="100"/>
+                    </VerticalStackLayout>
+
+                    <Border Grid.Column="1" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToStudents"
+                            BackgroundColor="Black" Text="Students"/>
+                    </Border>
+
+                    <Border Grid.Column="2" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToAbout" BackgroundColor="Black" Text="About"/>
+                    </Border>
+
+                    <Border Grid.Column="3" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToFAQ" BackgroundColor="Black" Text="FAQ"/>
+                    </Border>
+
+                    <Border Grid.Column="4" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToAccount" BackgroundColor="Black" Text="Account"/>
+                    </Border>
+
+                    <Border Grid.Column="5" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="logOut" BackgroundColor="Black" Text="Log Out"/>
+                    </Border>
+
+
+                    <VerticalStackLayout HorizontalOptions="End" Grid.Row="0"
+                    Grid.Column="7" Margin="0, 37, 20, 0">
+                        <Label FontSize="16" TextColor="#21B1FF" Text="GradeBook" />
+
+                    </VerticalStackLayout>
+
+                </Grid>
+            </StackLayout>
+
+
+            <CollectionView ItemsSource="{Binding Users}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="3"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate x:DataType="model:User">
+                        <Border Stroke="Transparent"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 30,30,30,30"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                            Margin="0, 30">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="onStudentSelected"/>
+                            </Border.GestureRecognizers>
+                            <VerticalStackLayout WidthRequest="300" HeightRequest="250">
+                                <Border Stroke="#21B1FF"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 15,15, 15, 15"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                    Margin="10">
+                                    <VerticalStackLayout WidthRequest="240">
+                                        <Label FontSize="25" MaxLines="1" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Name}" Padding="10"/>
+
+                                    </VerticalStackLayout>
+                                </Border>
+                                <Border Stroke="#21B1FF"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 15,15, 15, 15"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White">
+                                    <VerticalStackLayout WidthRequest="240">
+                                        <Label Margin="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Newest Grade: 5.8" Padding="10"/>
+                                        <Label Margin="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Average: 4.5" Padding="10"/>
+                                        <Label Margin="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Best Subject: Math" Padding="10"/>
+
+                                    </VerticalStackLayout>
+                                </Border>
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

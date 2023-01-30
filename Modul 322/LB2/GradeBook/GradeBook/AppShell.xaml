@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GradeBook.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GradeBook"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Students}"
+        Route="Students" />
+    <ShellContent
+        ContentTemplate="{DataTemplate local:StudentDetail}"
+        Route="StudentDetail" />
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Account}"
+        Route="Account" />
+    <ShellContent
+        ContentTemplate="{DataTemplate local:FAQ}"
+        Route="FAQ" />
+    <ShellContent
+        ContentTemplate="{DataTemplate local:About}"
+        Route="About" />
+
+</Shell>

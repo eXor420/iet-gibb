@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GradeBook.About"
+             Title="About"
+             BackgroundColor="#3B6175">
+    <ScrollView>
+
+
+        <VerticalStackLayout>
+            <StackLayout HeightRequest="100" BackgroundColor="#000000" >
+                <Grid ColumnSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <VerticalStackLayout HorizontalOptions="Start" Grid.Row="0"
+                    Grid.Column="0">
+                        <Image Source="logo.png"
+                                SemanticProperties.Description="Rickpat's Logo"
+                                HeightRequest="100"/>
+                    </VerticalStackLayout>
+
+                    <Border Grid.Column="1" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToStudents"
+                            BackgroundColor="Black" Text="Students"/>
+                    </Border>
+
+                    <Border Grid.Column="2" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToAbout" BackgroundColor="Black" Text="About"/>
+                    </Border>
+
+                    <Border Grid.Column="3" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToFAQ" BackgroundColor="Black" Text="FAQ"/>
+                    </Border>
+
+                    <Border Grid.Column="4" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="navigateToAccount" BackgroundColor="Black" Text="Account"/>
+                    </Border>
+
+                    <Border Grid.Column="5" Margin="0,15" Grid.Row="0" StrokeThickness="2" Stroke="#21B1FF"
+                    StrokeShape="RoundRectangle 20,20,20,20">
+                        <Button FontSize="16" TextColor="#21B1FF" Clicked="logOut" BackgroundColor="Black" Text="Log Out"/>
+                    </Border>
+
+
+                    <VerticalStackLayout HorizontalOptions="End" Grid.Row="0"
+                    Grid.Column="7" Margin="0, 37, 20, 0">
+                        <Label FontSize="16" TextColor="#21B1FF" Text="GradeBook" />
+
+                    </VerticalStackLayout>
+
+                </Grid>
+            </StackLayout>
+
+            <Grid Margin="0,0,0,30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="800"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Column="1" Grid.Row="0" Stroke="Transparent"
+                                        StrokeThickness="3"
+                                        StrokeShape="RoundRectangle 40,40,40,40"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="White"
+                                    Margin="0, 30,0,0">
+                    <StackLayout Margin="0, 20" WidthRequest="800">
+                        <Label FontSize="40" HorizontalOptions="Center" Text="About"/>
+
+                    </StackLayout>
+
+                </Border>
+                <VerticalStackLayout Grid.Column="1" Grid.Row="1">
+                    <Border Stroke="Transparent"
+                                        StrokeThickness="3"
+                                        StrokeShape="RoundRectangle 40,40,40,40"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="White"
+                                    Margin="0, 30,0,0">
+                        <Grid Margin="0, 20" WidthRequest="800">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="600"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="1">
+                                <Label FontSize="30" Margin="0,0,0,15" HorizontalOptions="Center" Text="Grade Book"/>
+                            <Label FontSize="18" Margin="0,0,0,10" HorizontalOptions="Center" Text="This Grade Book was released on 12/31/2022 and made available to apprentices of Rickpat's Schruberbude. From now on, it will replace the excel spreadsheets and make it easier to deal with school grades. Eventually the GradeBook will be extended and more functions will be added if the budget and time are available."/>
+                            </StackLayout>
+                            
+                        </Grid>
+
+                    </Border>
+
+                    <Border  Stroke="Transparent"
+                                        StrokeThickness="3"
+                                        StrokeShape="RoundRectangle 40,40,40,40"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="White"
+                                    Margin="0, 30,0,0">
+                        <StackLayout Margin="0, 20" WidthRequest="800">
+                            <Label FontSize="30" Margin="0,0,0,15" HorizontalOptions="Center" Text="Thanks to"/>
+                            <Label FontSize="18" HorizontalOptions="Center" Text="Gerald Versluis"/>
+                            <Label FontSize="18" HorizontalOptions="Center" Text="Rickpat's Schruberbude"/>
+                            <Label FontSize="18" HorizontalOptions="Center" Text="George Washington"/>
+                            <Label FontSize="18" HorizontalOptions="Center" Text="Mr. Staub"/>
+                            <Label FontSize="18" HorizontalOptions="Center" Text="Henny Lerren"/>
+                            <Label FontSize="18" HorizontalOptions="Center" Text="Steven Spielberg"/>
+                            <Label FontSize="18" HorizontalOptions="Center" Text="Mr. Glarner"/>
+                            <Label FontSize="18" Margin="0,0,0,10" HorizontalOptions="Center" Text="Maurice Däppen"/>
+
+                        </StackLayout>
+
+                    </Border>
+
+                    <Border Stroke="Transparent"
+                                        StrokeThickness="3"
+                                        StrokeShape="RoundRectangle 40,40,40,40"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="White"
+                                    Margin="0, 30,0,0">
+                        <StackLayout Margin="0, 20" WidthRequest="800">
+                            <Label FontSize="30" Margin="0,0,0,15" HorizontalOptions="Center" Text="No Thanks to"/>
+                            <Label FontSize="18" HorizontalOptions="Center" Text="Andres Gruny"/>
+                            <Label FontSize="18" HorizontalOptions="Center" Text="Hog Rider"/>
+                            <Label FontSize="18" Margin="0,0,0,10" HorizontalOptions="Center" Text="Lord Nepi"/>
+
+                        </StackLayout>
+
+                    </Border>
+
+                    <Border Stroke="Transparent"
+                                        StrokeThickness="3"
+                                        StrokeShape="RoundRectangle 40,40,40,40"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="White"
+                                    Margin="0, 30,0,0">
+                        <Grid Margin="0, 20" WidthRequest="800">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Switch HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" OnColor="#d2efff" ThumbColor="#21B1FF" IsToggled="false"/>
+                            <Slider VerticalOptions="Center" Grid.Column="1" Maximum="100" MinimumTrackColor="#21B1FF" MaximumTrackColor="#21B1FF" ThumbColor="#21B1FF" Value="50"/>
+                            <CheckBox VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="2" Color="#21B1FF" />
+
+                        </Grid>
+
+                    </Border>
+                </VerticalStackLayout>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
