@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS mydatabase;
+
+USE mydatabase;
+
+CREATE TABLE IF NOT EXISTS Firma (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  business VARCHAR(255) NOT NULL,
+  annual_revenue INT NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS Person (
+  id INT NOT NULL AUTO_INCREMENT,
+  firstname VARCHAR(255) NOT NULL,
+  lastname VARCHAR(255) NOT NULL,
+  birthday DATE NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  Firma_id INT NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (Firma_id) REFERENCES Firma(id)
+);

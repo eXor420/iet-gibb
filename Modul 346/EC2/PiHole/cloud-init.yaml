@@ -1,0 +1,8 @@
+#cloud-config
+
+runcmd:
+  - sudo apt update
+  - sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf
+  - sudo apt upgrade -y
+  - sudo hostnamectl set-hostname AWS_PiHole
+  - sudo apt-get install expect -y
