@@ -1,0 +1,6 @@
+version: '3'
+services:
+  modul-347:
+    image: registry.gitlab.com/exor420/modul-347
+    ports:
+      - "8080:80"

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="Style/navbar.css">
+    <link rel="stylesheet" href="Style/global.css">
+    <link rel="stylesheet" href="Style/contact.css">
+    <!-- Ist für das Google-reCaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+<!-- Some parts of the Menu are From https://codepen.io/Javscript/pen/jOBbRpa -->
+<header>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" id="home">MDa</a>
+        <a href="webhosting.html">Webhosting-Anbieter </a>
+        <a href="legal-aspects.html">Rechtliche Aspekte </a>
+        <a href="mock-up.html">Mock Up </a>
+        <a href="about.html">About</a>
+        <a href="javascript:void(0);" class="hamburger" id="icon" onclick="openMenu()">
+            ☰
+        </a>
+    </div>
+</header>
+<main>
+    <article>
+        <h1>Kontakt</h1>
+        <p>Telefon: XXX XXX XX XX <br> E-Mail: example@example.ch</p>
+    </article>
+    <!-- iFrame für Google-Maps, das ganze zeigt den IET-Campus -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d585.7906022386837!2d7.444349796824106!3d46.955860735619346!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e3994cdcf8931%3A0xde38dd0dfdfbc02d!2sgibb%20-%20Campus%20IET!5e1!3m2!1sde!2sch!4v1664659152170!5m2!1sde!2sch"
+            width="600" height="450" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <!-- Kontaktformular welches validiert wird -->
+    <form id="contactForm">
+        <!-- Die beiden folgenden Label sind nacheinander damit 2 Inputs auf der gleichen Höhen sind -->
+        <div class="salutationLabel">
+            <label for="salutation">Anrede:</label>
+
+        </div>
+        <div class="nameLabel">
+            <label for="name">Name:</label>
+
+        </div>
+        <br>
+        <br>
+        <!-- Die ID "nameError" dient dazu dass sich die Fehlermeldung über dem Richtigen Input befindet.
+        Die Klasse "error" stylt die Fehlermeldungen -->
+        <p id="nameError" class="error"></p>
+        <select id="salutation" name="salutation">
+            <optgroup label="Anrede:">
+                <option value="Herr">Herr</option>
+                <option value="Frau">Frau</option>
+                <option value="Anderes">Anderes</option>
+            </optgroup>
+
+        </select>
+        <input type="text" id="name" name="name" placeholder="Vorname Nachname">
+        <br>
+        <label for="email">E-Mail:</label>
+        <br>
+        <p id="emailError" class="error"></p>
+        <input type="email" id="email" name="email" placeholder="example@gmail.xyz">
+        <br>
+        <label for="message">Nachricht:</label>
+        <br>
+        <p id="messageError" class="error"></p>
+        <textarea id="message" name="message" placeholder="Schreibe etwas..."></textarea>
+        <br>
+        <!-- reCaptcha mit dessen Fehlermeldung. Um den Data-sitekey zu erhalten musste man sich mit Google registrieren
+        https://www.google.com/recaptcha/admin/site/578991324 Auswertung von reCaptcha -->
+        <p id="recaptchaError" class="error"></p>
+        <div class="g-recaptcha"
+             data-sitekey="6LfctIIiAAAAAEqhuunpTFQsHJ3RArZQtWYnYWlx"
+        ></div>
+
+
+    </form>
+    <!-- Wenn dieser Button geklickt wird, wird das Formular validiert und bei Erfolg verarbeitet -->
+    <button onclick="buttonClicked()">Absenden</button>
+
+</main>
+<!-- Falls das Display zu klein ist wird kein Inhalt mehr angezeigt -->
+<div class="displayTooSmall">
+    <h2>Sorry :(</h2>
+    <p>Your screen is too small to show some Content!</p>
+</div>
+<footer>
+    <p><a href="imprint.html">Impressum</a> | <a href="./contact.html">Konatkt</a></p>
+</footer>
+<script>
+    //Funktion um dass Hamburger Menu zu öffnen/schliessen
+    function openMenu() {
+        let navBar = document.getElementById("myTopnav");
+        let icon = document.getElementById("icon");
+        if (navBar.className === "topnav") {
+            navBar.className += " responsive";
+            icon.innerHTML = "X";
+
+        } else {
+            navBar.className = "topnav";
+            icon.innerHTML = "☰";
+
+        }
+
+    }
+
+    function buttonClicked() {
+        let salutation = document.getElementById("salutation")
+        let name = document.getElementById("name")
+        let email = document.getElementById("email")
+        let message = document.getElementById("message")
+
+        //Falls das Fromular valide ist wird ein Alert mit den Eingegebenen Daten erstellt und das From zurückgesetzt
+        if (validateForm(name, email, message)) {
+            alert(salutation.value + " " + name.value + " hat folgende Nachricht abgeschickt: \n" + message.value);
+
+            document.getElementById("contactForm").reset()
+
+        }
+
+
+    }
+
+    function validateForm(name, email, message) {
+        let response = grecaptcha.getResponse();
+        let nameError = document.getElementById("nameError")
+        let emailError = document.getElementById("emailError")
+        let messageError = document.getElementById("messageError")
+        let reCaptchaError = document.getElementById("recaptchaError")
+
+        //Die Fehlermeldungen werden Zurückgesetzt
+        nameError.innerHTML = ""
+        emailError.innerHTML = ""
+        messageError.innerHTML = ""
+        reCaptchaError.innerHTML = ""
+
+        let isValidationViolation = false;
+
+        //Jeder Input der Invalide ist erhällt eine Fehlermeldung und der return-value der Funktion wird false sein
+        if (name.value.trim() === "") {
+            nameError.innerHTML = "Der Name darf nicht leer sein!"
+            isValidationViolation = true
+        } else if (!name.value.match(/^[a-zA-Z\s]*$/) || !name.value.trim().includes(" ")) {
+            nameError.innerHTML = "Bitte gebe einen gültigen Vor- & Nachnamen ein!"
+            isValidationViolation = true
+        }
+        if (email.value.trim() === "") {
+            emailError.innerHTML = "Die E-Mail darf nicht leer sein!"
+            isValidationViolation = true
+        } else if (!email.value.match(/^\S+@\S+\.\S+$/)) {
+            emailError.innerHTML = "Bitte gebe eine gültige E-Mail Adresse ein!"
+            isValidationViolation = true
+        }
+        if (message.value.trim() === "") {
+            messageError.innerHTML = "Die Nachricht darf nicht leer sein!"
+            isValidationViolation = true
+        } else if (message.value.split(" ").length < 10) {
+            messageError.innerHTML = "Ihre Nachricht muss aus mind. 10 Wörter bestehen!"
+            isValidationViolation = true
+        }
+        if (response.length === 0) {
+            reCaptchaError.innerHTML = "Verifizieren Sie dass Sie kein Roboter sind!"
+            isValidationViolation = true
+        }
+        return !isValidationViolation
+    }
+
+</script>
+
+
+</body>
+</html>

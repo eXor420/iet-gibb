@@ -1,0 +1,176 @@
+/* Idea from https://stackoverflow.com/questions/24990554/how-to-include-a-font-ttf-using-css */
+@font-face {
+    font-family: 'EncodeSansSC';
+    src: url("./../Media/Fonts/EncodeSans-CondensedThin.woff") format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ url("./../Media/Fonts/EncodeSans.ttf") format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+    font-family: 'AirAmericana';
+    src: url("./../Media/Fonts/AirAmericana.woff") format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ url("./../Media/Fonts/AirAmericana.ttf") format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+main {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article {
+    margin: 0;
+}
+
+iframe {
+    width: 100%;
+    border: 0;
+    border-radius: 25px
+}
+
+form {
+    color: white;
+    margin-top: 70px;
+}
+
+form label {
+    font-family: "EncodeSansSC", sans-serif;
+    font-size: 25px;
+}
+
+form input {
+    padding: 2%;
+    border-radius: 15px;
+    border-style: none;
+    font-size: 140%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+
+}
+
+form #salutation {
+    clear: left;
+    padding: 2%;
+    border-radius: 15px;
+    border-style: none;
+    margin-right: 8%;
+    width: 20%;
+    margin-bottom: 30px;
+    margin-top: 5px;
+
+}
+
+form .salutationLabel {
+    float: left;
+    width: 20%;
+    margin-right: 8%;
+
+}
+
+form #name {
+    width: 66.2%;
+    margin-top: 5px;
+
+
+}
+
+form .nameLabel {
+    float: left;
+    padding-left: 1%;
+
+}
+
+.error {
+    color: #FE1C78;
+    font-size: 18px;
+    font-family: 'EncodeSansSC', sans-serif;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#recaptchaError {
+    margin-bottom: 10px;
+}
+
+#nameError {
+    margin-left: 29%;
+    margin-bottom: 7px;
+}
+
+form select {
+    font-size: 140%;
+}
+
+form #email {
+    width: 96%;
+}
+
+form textarea {
+    padding: 2%;
+    border-radius: 15px;
+    border-style: none;
+    width: 96%;
+    height: 200px;
+    resize: none;
+    font-size: 120%;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+button {
+    width: 100%;
+    background-color: #FFC040;
+    color: #FE1C78;
+    font-family: "AirAmericana", sans-serif;
+    border-radius: 25px;
+    font-size: 25px;
+    margin-bottom: 10%;
+    padding: 20px 0;
+    transition: all .25s;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #FFC040;
+    background-color: #FE1C78;
+    letter-spacing: 10px;
+}
+
+.g-recaptcha {
+    margin-bottom: 30px;
+}
+
+
+@media screen and (min-width: 400px) {
+    form #name {
+        width: 66.7%;
+
+    }
+}
+
+@media screen and (max-width: 720px) {
+    form select {
+        font-size: 100%
+    }
+
+    form textarea {
+        font-size: 100%;
+    }
+
+    form input {
+        font-size: 100%;
+    }
+}
+
+
+@media screen and (min-width: 720px) {
+    form #name {
+        width: 67.2%;
+
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    form #name {
+        width: 67.5%;
+
+    }
+}
+

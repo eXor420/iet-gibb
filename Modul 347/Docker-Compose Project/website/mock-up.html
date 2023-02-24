@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Up</title>
+    <link href="Style/navbar.css" rel="stylesheet">
+    <link href="Style/global.css" rel="stylesheet">
+    <link href="Style/mock-up.css" rel="stylesheet">
+</head>
+<body>
+<!-- Some parts of the Menu are From https://codepen.io/Javscript/pen/jOBbRpa -->
+<header>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" id="home">MDa</a>
+        <a href="webhosting.html">Webhosting-Anbieter </a>
+        <a href="legal-aspects.html">Rechtliche Aspekte </a>
+        <a href="./mock-up.html">Mock Up </a>
+        <a href="about.html">About</a>
+        <a class="hamburger" href="javascript:void(0);" id="icon" onclick="openMenu()">
+            ☰
+        </a>
+    </div>
+</header>
+<main>
+    <div>
+        <article id="introduction">
+            <h1>Mock-Up dieser Website</h1>
+            <p>Ich habe lange darüber nachgedacht was meine Website sein soll. Denn sie soll mir nicht nur eine gute
+                Note beschaffen, sondern ich möchte auch dass ich am Schluss damit zufrieden sein kann und diese mir
+                gefällt. Ich hatte Dinge im Kopf wie eine Website über ein Videospiel, über meine Hobbies oder auch
+                einfach über mich. Jedoch fand ich diese Ideen alle ein bisschen standartmässig. Standartmässig heisst
+                in meinen Augen etwas was auch jemand andere machen würde. Da ich aber auch nicht der Beste im Webdesign
+                bin habe mich nun dazu entschieden dass dieses Portfolie hier etwas langweilig ist und auch nicht so gut
+                aussieht. Deshalb wird meine Website einfach mein Portfolio. Jeder darf davon halten, was er will. Ein
+                paar meiner Kollegen fanden die Idee gut andere auch nicht so gut. Ich bin trotzdem dass die Idee gut
+                ist und stehe voll dahinter. <br> <br> habe mich dazu entschieden die Website nicht einfach in einem
+                einfachen klassischen weissen Design zu machen. Denn ich habe das Design meiner Webseite an einem
+                Retrowavestyle angepasst.</p>
+        </article>
+
+        <br>
+        <!-- Meine Bildergalerie wird mithilfe dieses Elements dargestellt -->
+        <div id="slideShowElement">
+            <div class="slideshow-container">
+                <!-- Die einzelnen Slides -->
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 9</div>
+                    <img src="Media/Images/LandingPage.png" style="width:100%" alt="Mockup von der Landingpage">
+                    <div class="text">Die Landing-Page -- Besuche sie <a class="mockup-link"
+                                                                         href="index.html">hier</a>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 9</div>
+                    <img src="Media/Images/LandingPageWithOpendMenu.png" style="width:100%"
+                         alt="Mockup von der Landingpage mit geöffnetem Menu">
+                    <div class="text">Die Landing-Page mit geöffnetem Menu -- Besuche sie <a class="mockup-link"
+                                                                                             href="index.html">hier</a>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 9</div>
+                    <img src="Media/Images/WebhostinganbieterImVergleich.png" style="width:100%"
+                         alt="Mockup von der Page über Webhostinganbieter">
+                    <div class="text">Webhostinganbieter-Page -- Besuche sie <a class="mockup-link"
+                                                                                href="webhosting.html">hier</a></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 9</div>
+                    <img src="Media/Images/RechtlicheAspekte.png" style="width:100%"
+                         alt="Mockup von der Page über Rechtliche Aspekte">
+                    <div class="text">Rechtliche Aspekte-Page -- Besuche sie <a class="mockup-link"
+                                                                                href="legal-aspects.html">hier</a></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 9</div>
+                    <img src="Media/Images/Galerie.png" style="width:100%"
+                         alt="Mockup von der Page über die Mockup/Bildgalerie">
+                    <div class="text">Galerie-Page/Mock-Up-Page -- Besuche sie <a class="mockup-link"
+                                                                                  href="./mock-up.html">hier</a></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 9</div>
+                    <img src="Media/Images/About.png" style="width:100%" alt="Mockup der About Page">
+                    <div class="text">About-Page -- Besuche sie <a class="mockup-link" href="about.html">hier</a></div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">7 / 9</div>
+                    <img src="Media/Images/About.png" style="width:100%" alt="Mockup der Kontakt Page">
+                    <div class="text">Kontakt-Page -- Besuche sie <a class="mockup-link" href="contact.html">hier</a>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">8 / 9</div>
+                    <img src="Media/Images/About.png" style="width:100%"
+                         alt="Mockup der Kontakt Page wenn falsche Inputs getätigt wurden">
+                    <div class="text">Kontakt-Page validiert -- Besuche sie <a class="mockup-link" href="contact.html">hier</a>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">9 / 9</div>
+                    <img src="Media/Images/About.png" style="width:100%" alt="Mockup des Impressums">
+                    <div class="text">Impressum-Page -- Besuche sie <a class="mockup-link" href="imprint.html">hier</a>
+                    </div>
+                </div>
+                <!-- Die beiden Buttons recht & links an den Slides um diese anzuschauen -->
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+            </div>
+            <br>
+            <!-- Die einzelnen Punkte unterhalb der einzelnen Bilder -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Falls das Display zu klein ist wird kein Inhalt mehr angezeigt -->
+<div class="displayTooSmall">
+    <h2>Sorry :(</h2>
+    <p>Your screen is too small to show some Content!</p>
+</div>
+<footer>
+    <p><a href="imprint.html">Impressum</a> | <a href="contact.html">Konatkt</a></p>
+</footer>
+<script>
+    //Funktion um dass Hamburger Menu zu öffnen/schliessen
+    function openMenu() {
+        let navBar = document.getElementById("myTopnav");
+        let icon = document.getElementById("icon");
+        if (navBar.className === "topnav") {
+            navBar.className += " responsive";
+            icon.innerHTML = "X";
+
+        } else {
+            navBar.className = "topnav";
+            icon.innerHTML = "☰";
+
+        }
+
+    }
+    //um die slides zu bewegen wenn man zum nächsten/vorherigen Bild wechseln möchte
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+</script>
+</body>
+</html>
