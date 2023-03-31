@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ende</title>
+  <link href="./styles/global.css" rel="stylesheet">
+</head>
+<body id="end">
+
+<div id="end-grid">
+  <h1 id="title">Der Geschäftsprozess endet hier! Der Bewerber wurde nicht eingestellt!</h1>
+  <h1 id="smiley">:/</h1>
+</div>
+<button id="back">Zurück zum Start!</button>
+
+
+</body>
+<script>
+  const backButton = document.getElementById('back');
+  backButton.addEventListener('click', function() {
+    window.location.href = './index.html';
+  });
+</script>
+
+</html>

@@ -1,0 +1,83 @@
+#bewerber {
+    background: blue;
+}
+
+#hr {
+    background: red;
+}
+
+#end {
+    background: black;
+}
+
+#goodend {
+    background: green;
+}
+
+h1, h2, p {
+    color: white;
+    font-family: "Dubai Light", sans-serif;
+}
+
+p {
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+#sicht {
+    font-size: 15px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'title title';
+    text-align: center;
+}
+
+#end-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'title title'
+    'smiley smiley';
+    text-align: center;
+}
+
+#smiley {
+    grid-area: smiley;
+    font-size: 150px;
+    margin-top: -100px;
+    margin-bottom: -50px;
+}
+
+#title {
+    grid-area: title;
+    margin-bottom: 100px;
+}
+
+.arg {
+    text-align: end;
+    margin-right: 20px;
+}
+
+input {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+button {
+    margin-top: 200px;
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+button:hover {
+    background: grey;
+}

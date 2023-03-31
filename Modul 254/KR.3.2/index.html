@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bewerbung einreichen</title>
+    <link href="./styles/global.css" rel="stylesheet">
+</head>
+<body id="bewerber">
+
+<p id="sicht">Sicht: Bewerber</p>
+
+<div id="grid">
+    <h1 id="title">Bewerbung einreichen</h1>
+
+    <p class="arg">Bewerbung:</p>
+    <input type="file">
+</div>
+<button id="submit">Absenden</button>
+
+
+</body>
+<script>
+    const submitButton = document.getElementById('submit');
+    submitButton.addEventListener('click', function() {
+        window.location.href = './hr-invite.html';
+    });
+</script>
+
+</html>

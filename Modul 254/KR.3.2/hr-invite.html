@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bewerbung annehmen?</title>
+  <link href="./styles/global.css" rel="stylesheet">
+</head>
+<body id="hr">
+
+<p id="sicht">Sicht: HR</p>
+
+<div id="grid">
+
+  <h1 id="title">Bewerber zum Bewerbungsgespräch einladen?</h1>
+  <button id="no">Nein</button>
+
+  <button id="yes">Ja</button>
+</div>
+</body>
+
+<script>
+  const noButton = document.getElementById('no');
+  noButton.addEventListener('click', function() {
+    window.location.href = './end.html';
+  });
+
+  const yesButton = document.getElementById('yes');
+  yesButton.addEventListener('click', function() {
+    window.location.href = './hr-offer.html';
+  });
+</script>
+
+</html>
