@@ -1,0 +1,1 @@
+Leider nur als Word da der Spicker als PDF zu verpixelt ist :/
