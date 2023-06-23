@@ -1,0 +1,76 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+      - postgres-db
+   
+  frontend:
+    build:
+      context: ./frontend/r8-iet-gibb
+      dockerfile: Dockerfile
+    ports:
+      - 6969:80
+    depends_on:
+      - backend
+  
+  db:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+      
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus:/etc/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    depends_on:
+      - mongo-exporter
+      
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3001:3000
+    user: root
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=pass
+    depends_on:
+      - prometheus
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+
+  
+  mongo-exporter:
+    image: bitnami/mongodb-exporter
+    ports:
+      - 9216:9216
+    environment:
+      - MONGODB_URI=mongodb://db:27017
+    depends_on:
+      - db
+      
+  postgres-db:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: performance
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      
+volumes:
+  mongo_data:
+  postgres_data:
