@@ -13,12 +13,29 @@ describe('TeacherCardComponent', () => {
   });
 
   describe('calculateAverageValue', () => {
+    // negative test
     it('should return -1 if the rating array is empty', () => {
       const rating: RatingDto[] = [];
       const result = component.calculateAverageValue(rating);
       expect(result).toBe(-1);
     });
 
+    // negative test
+    it('should return NaN for invalid rating values', () => {
+      const ratings = [
+        { value: 4 } as RatingDto,
+        { value: -2 } as RatingDto,
+        { value: 7 } as RatingDto,
+        { value: 'invalid' },
+      ] as RatingDto[];
+
+      const result = component.calculateAverageValue(ratings);
+
+      expect(result).toBeNaN();
+    });
+
+
+    // positive test
     it('should return the correct average value for a non-empty rating array', () => {
       const rating: RatingDto[] = [
         {value: 3} as RatingDto,
@@ -31,6 +48,7 @@ describe('TeacherCardComponent', () => {
       expect(result).toBe(3); // (3 + 4 + 5 + 2 + 1) / 5 = 3
     });
 
+    // positive test
     it('should round the average value to the nearest integer', () => {
       const rating: RatingDto[] = [
         {value: 2} as RatingDto,
