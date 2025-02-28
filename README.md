@@ -2,7 +2,7 @@
 
 ## Info
 
-Dieses Repository enthält Projekte, Aufgaben und andere Materialien, die ich während meiner Zeit in der Gibb erstellt habe. Ich habe sie hochgeladen, um anderen als Inspiration, Idee oder Hilfe zu dienen. Du darfst den Code sowie die anderen Medien gerne kopieren und für deine eigenen Zwecke verwenden. Allerdings empfehle ich, den Inhalt nicht 1:1 zu übernehmen, um Plagiatsprobleme zu vermeiden.
+Dieses Repository enthält Projekte, Aufgaben und andere Materialien, die ich während meiner Zeit in der IET-Gibb erstellt habe. Ich habe sie hochgeladen, um anderen als Inspiration, Idee oder Hilfe zu dienen. Du darfst den Code sowie die anderen Medien gerne kopieren und für deine eigenen Zwecke verwenden. Allerdings empfehle ich, den Inhalt nicht 1:1 zu übernehmen, um Plagiatsprobleme zu vermeiden.
 
 Bitte beachte, dass einige Module fehlen, da ich entweder keine Unterlagen dazu erstellt habe oder diese leider nicht mehr finden konnte :/
 
