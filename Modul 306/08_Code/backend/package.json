@@ -1,0 +1,17 @@
+{
+  "name": "xserver-backend",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@kubernetes/client-node": "^0.21.0",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.5.0",
+    "uuid": "^9.0.1"
+  }
+}

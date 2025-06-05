@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: git-registry.gibb.ch/mda133769/xserver/xserver-frontend:latest
+    build: ./frontend
+    ports:
+      - "3000:80"
+  
+  backend:
+    image: git-registry.gibb.ch/mda133769/xserver/xserver-backend:latest
+    build: ./backend
+    ports:
+      - "3001:3001"
+  
+  db-service:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+  
+volumes:
+  mongo_data:

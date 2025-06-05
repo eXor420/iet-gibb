@@ -1,0 +1,36 @@
+stages:
+  - backend-build-image
+  - backend-build-image-release
+
+backend-build-image:
+  stage: backend-build-image
+  image:
+    name: gcr.io/kaniko-project/executor:v1.14.0-debug
+    entrypoint: [""]
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  variables:
+    IMAGE_TAG: "${CI_REGISTRY}/mda133769/xserver/xserver-backend:$CI_COMMIT_REF_SLUG"
+  script:
+    - IMAGE_TAG="${CI_REGISTRY}/mda133769/xserver/xserver-backend:latest"
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64)\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context ./backend
+      --dockerfile Dockerfile
+      --destination $IMAGE_TAG
+
+backend-build-image-release:
+  stage: backend-build-image-release
+  image:
+    name: gcr.io/kaniko-project/executor:v1.14.0-debug
+    entrypoint: [""]
+  rules:
+    - if: $CI_COMMIT_TAG
+  variables:
+    IMAGE_TAG: "${CI_REGISTRY}/mda133769/xserver/xserver-backend:${CI_COMMIT_TAG}"
+  script:
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64)\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor 
+      --context ./backend 
+      --dockerfile Dockerfile 
+      --destination $IMAGE_TAG

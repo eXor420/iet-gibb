@@ -1,0 +1,44 @@
+# Define CI files for non-top-level apps
+include:
+  - local: 'frontend/.gitlab-ci.yml'
+  - local: 'backend/.gitlab-ci.yml'
+
+stages:
+  - frontend-build-image
+  - frontend-build-image-release
+  - backend-build-image
+  - backend-build-image-release
+  - notify
+
+# Common setup for notifications
+.notify_template: &notify_setup
+  image: curlimages/curl
+  before_script:
+    - >
+      case "$GITLAB_USER_EMAIL" in
+        "mda133769@stud.gibb.ch") TRIGGER_ID="739873158672285860";;
+        "pae092284@stud.gibb.ch") TRIGGER_ID="749086420479770754";;
+        "lhe132393@stud.gibb.ch") TRIGGER_ID="889781683501539350";;
+        "mha134743@stud.gibb.ch") TRIGGER_ID="456413388998967307";;
+        *) TRIGGER_ID="unknown";;
+      esac;
+      export TRIGGER_ID
+
+# Notification jobs
+notify_discord_success:
+  <<: *notify_setup
+  stage: notify
+  script:
+    - >
+      curl -H "Content-Type: application/json" -d "{\"content\": \"🚀 Build Success: The build was successful on branch $CI_COMMIT_BRANCH! Build started by <@$TRIGGER_ID>\"}" $DISCORD_WEBHOOK_URL
+  rules:
+    - when: on_success
+
+notify_discord_failure:
+  <<: *notify_setup
+  stage: notify
+  script:
+    - >
+      curl -H "Content-Type: application/json" -d "{\"content\": \"💔 Failure: Build or deploy failed on branch $CI_COMMIT_BRANCH. Please check the details. Build started by <@$TRIGGER_ID>\"}" $DISCORD_WEBHOOK_URL
+  rules:
+    - when: on_failure
