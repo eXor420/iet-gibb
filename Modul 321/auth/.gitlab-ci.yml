@@ -1,0 +1,24 @@
+stages:
+    - build-image
+
+auth-build-image:
+    stage: build-image
+    image: docker:latest
+
+    variables:
+        DOCKER_HOST: "tcp://docker:2375"
+        DOCKER_TLS_CERTDIR: ""
+        DOCKER_BUILDKIT: "1"
+        IMAGE_NAME: "${CI_REGISTRY}/mda133769/xserver/xserver-auth:latest"
+
+    services:
+        - name: docker:dind
+          command: ["--storage-driver=overlay2"]
+
+    before_script:
+        - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
+
+    script:
+        - docker pull "$IMAGE_NAME" || true
+        - docker build --cache-from="$IMAGE_NAME" -t "$IMAGE_NAME" ./auth
+        - docker push "$IMAGE_NAME"

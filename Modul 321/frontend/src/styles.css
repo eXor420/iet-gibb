@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #2d2d2d;
+}
+
+h1, h2, h3, h4, h5, h6, p, label {
+    color: white;
+}
+
+h1 {
+    font-family: "Orbitron", sans-serif;
+}
+
+h2, h3, h4, h5, h6, p, label {
+    font-family: "Aldrich", sans-serif;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    background-color: #1e94d3;
+    border: none;
+    border-radius: 20px;
+    font-family: "Aldrich", sans-serif;
+    cursor: pointer;
+}
+
+button:disabled{
+    cursor: not-allowed;
+}
+

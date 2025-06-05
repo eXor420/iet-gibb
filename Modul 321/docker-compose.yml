@@ -1,0 +1,173 @@
+services:
+  frontend:
+    image: git-registry.gibb.ch/mda133769/xserver/xserver-frontend:latest
+    build: ./frontend
+    ports:
+      - "3069:80"
+  
+  auth-service:
+    image: git-registry.gibb.ch/mda133769/xserver/xserver-auth:latest
+    build: ./auth
+    ports:
+      - "3001:3001"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      auth-db:
+        condition: service_started
+    volumes:
+      - shared-logs:/app/logs
+      
+  auth-db:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - auth_data:/data/db
+  
+  user-service:
+    image: git-registry.gibb.ch/mda133769/xserver/xserver-user-service:latest
+    build: ./user-service
+    ports:
+      - "3002:3002"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      user-db:
+        condition: service_started
+    volumes:
+      - shared-logs:/app/logs
+  
+  user-db:
+    image: mongo
+    ports:
+      - 27018:27017
+    volumes:
+      - user_data:/data/db
+      
+  payment-service:
+    image: git-registry.gibb.ch/mda133769/xserver/xserver-payment-service:latest
+    build: ./payment-service
+    ports:
+      - "3003:3003"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      payment-db:
+        condition: service_started
+    volumes:
+      - shared-logs:/app/logs
+  
+  payment-db:
+    image: mongo
+    ports:
+      - 27019:27017
+    volumes:
+      - payment_data:/data/db
+  
+  twint-service:
+    image: git-registry.gibb.ch/mda133769/xserver/xserver-twint-service:latest
+    build: ./twint-service
+    ports:
+      - "3004:3004"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      - "15692:15692"  # <--- Prometheus Metrics Endpoint
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    command: >
+      bash -c "rabbitmq-plugins enable --offline rabbitmq_prometheus && rabbitmq-server"
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+  loki:
+    container_name: loki
+    image: docker.io/grafana/loki:3.5.0
+    command: "-config.file=/etc/loki/config.yaml"
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./loki/config.yaml:/etc/loki/config.yaml:ro
+      - data_loki:/loki:rw
+    restart: unless-stopped
+  
+  grafana:
+    image: docker.io/grafana/grafana-oss:12.0.0
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    restart: unless-stopped
+  
+  promtail:
+    image: docker.io/grafana/promtail:3.5.0
+    command: "-config.file=/mnt/config/config.yaml"
+    volumes:
+      - ./promtail/config.yaml:/mnt/config/config.yaml:ro
+      - shared-logs:/logs:ro
+    restart: unless-stopped
+    
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: unless-stopped
+    
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    restart: unless-stopped
+
+  reverse-proxy:
+    image: nginx:latest
+    container_name: reverse-proxy
+    ports:
+      - "5555:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - frontend
+      - grafana
+      - rabbitmq
+      - auth-service
+      - user-service
+    restart: unless-stopped
+
+
+volumes:
+  auth_data:
+  user_data:
+  payment_data:
+  rabbitmq_data:
+  data_loki:
+  grafana-data:
+  shared-logs:

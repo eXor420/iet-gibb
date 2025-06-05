@@ -1,0 +1,75 @@
+include:
+#  - local: 'frontend/.gitlab-ci.yml'
+  - local: 'auth/.gitlab-ci.yml'
+  - local: 'user-service/.gitlab-ci.yml'
+  - local: 'payment-service/.gitlab-ci.yml'
+  - local: 'twint-service/.gitlab-ci.yml'
+
+stages:
+  - build-image
+  - convert
+  - notify
+
+.notify_template: &notify_setup
+  image: curlimages/curl
+  before_script:
+    - >
+      case "$GITLAB_USER_EMAIL" in
+        "mda133769@stud.gibb.ch") TRIGGER_ID="739873158672285860";;
+        "pae092284@stud.gibb.ch") TRIGGER_ID="749086420479770754";;
+        "lhe132393@stud.gibb.ch") TRIGGER_ID="889781683501539350";;
+        "mha134743@stud.gibb.ch") TRIGGER_ID="456413388998967307";;
+        *) TRIGGER_ID="unknown";;
+      esac;
+      export TRIGGER_ID
+
+convert_drawio_to_png:
+    stage: convert
+    image: docker:latest
+
+    variables:
+        DOCKER_HOST: "tcp://docker:2375"
+        DOCKER_TLS_CERTDIR: ""
+        DOCKER_BUILDKIT: "1"
+
+    services:
+        - name: docker:dind
+          command: ["--storage-driver=overlay2"]
+
+    script:
+        - ls
+        - docker stop drawio-container 2>/dev/null || true
+        - docker rm drawio-container 2>/dev/null || true
+        - docker run -d --name drawio-container --privileged accetto/ubuntu-vnc-xfce-drawio-g3
+        - docker cp ./arch.drawio drawio-container:/home/headless/
+        - docker exec drawio-container sh -c "drawio -x -f png -o /home/headless/arch.png /home/headless/arch.drawio"
+        - docker cp drawio-container:/home/headless/arch.png ./
+        - ls
+        - docker stop drawio-container
+        - docker rm drawio-container
+
+    artifacts:
+        paths:
+            - arch.png
+    
+    rules:
+        - if: '$CI_COMMIT_MESSAGE !~ /.*\[auto-commit\].*/'
+
+# Notification jobs
+notify_discord_success:
+  <<: *notify_setup
+  stage: notify
+  script:
+    - >
+      curl -H "Content-Type: application/json" -d "{\"content\": \"🚀 Build Success: The build was successful on branch $CI_COMMIT_BRANCH! Build started by <@$TRIGGER_ID>\"}" $DISCORD_WEBHOOK_URL
+  rules:
+    - when: on_success
+
+notify_discord_failure:
+  <<: *notify_setup
+  stage: notify
+  script:
+    - >
+      curl -H "Content-Type: application/json" -d "{\"content\": \"💔 Failure: Build or deploy failed on branch $CI_COMMIT_BRANCH. Please check the details. Build started by <@$TRIGGER_ID>\"}" $DISCORD_WEBHOOK_URL
+  rules:
+    - when: on_failure

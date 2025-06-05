@@ -1,0 +1,34 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  - job_name: xserver_logs
+    static_configs:
+      - targets: ["localhost"]
+        labels:
+          job: xserver
+          service: auth
+          __path__: /logs/auth.log
+      - targets: ["localhost"]
+        labels:
+          job: xserver
+          service: user
+          __path__: /logs/user.log
+      - targets: ["localhost"]
+        labels:
+          job: xserver
+          service: payment
+          __path__: /logs/payment.log
+    pipeline_stages:
+      - regex:
+          expression: 'correlation-id=(?P<correlation_id>[a-zA-Z0-9\-]+)'
+      - labels:
+          correlation_id: correlation_id
+          service: service
